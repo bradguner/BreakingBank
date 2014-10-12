@@ -32,24 +32,43 @@ class agent(object):
 	def delete():
 		return 0 
 	def runAgentDay():
-		return 0	
+		running = True
+		while (running):
+			transaction = raw_input('Perform a transaction: ')
+			transaction.lowercase
+			if (transaction == "withdraw"):
+				self.withdraw()
+			elif (transaction == "deposit"):
+				self.deposit()	
+			elif (transaction == "transfer"):
+				self.transfer()	
+			elif (transaction == "create"):
+				self.create()	
+			elif (transaction == "delete"):
+				self.delete()	
+			elif (transaction == "logout"):
+				running = False
+			else:
+				print "Please enter a valid transaction type."	
+		return False				
+
 
 def openBankingSystem():
-	loggedIn = true
+	loggedIn = True
 	while (loggedIn):
 		firstInput = raw_input('Type "login" to login: ')
 		firstInput.lowercase
-		if (firstInput = "login"):
-			pickDay = true
-			while (pickDay)
+		if (firstInput == "login"):
+			pickDay = True
+			while (pickDay):
 				dayType = raw_input('agent or retail: ')
 				dayType.lowercase
-				if (dayType = "retail"):
-					pickDay = false
+				if (dayType == "retail"):
+					pickDay = False
 					retailDay = retail(dayType)
 					loggedIn = retailDay.runRetailDay()
-				else if (dayType = "agent"):
-					pickDay = false	
+				elif (dayType == "agent"):
+					pickDay = False	
 					agentDay = agent(dayType)
 					loggedIn = agentObject.runAgentDay()
 				else: 
@@ -60,3 +79,4 @@ def openBankingSystem():
 
 ######	 MAIN PROGRAM 	######
 openBankingSystem()
+#needs file writing
