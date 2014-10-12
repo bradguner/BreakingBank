@@ -1,4 +1,6 @@
-class retail():
+class retail(object):
+	def __init__(self, var):
+		self.var = var
 	#initialize class
 	function runRetailDay():
 		#so in the funcition it will basically run a loop, gets 
@@ -19,10 +21,11 @@ class agent():
 	function delete	
 
 
-function openBankingSystem():
+def openBankingSystem():
 	loggedIn = true
 	while (loggedIn):
 		#get input
+		filename = raw_input('Enter a file name: ')
 		if (input = "login"):
 			#get second input
 			pickDay = true
