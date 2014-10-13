@@ -16,7 +16,22 @@ class retail(object):
 	def transfer():
 		return 0 
 	def runRetailDay():
-		return 0	
+		running = True
+		while (running):
+			transaction = raw_input('Perform a transaction: ')
+			transaction.lowercase
+			if (transaction == "withdraw"):
+				self.withdraw()
+			elif (transaction == "deposit"):
+				self.deposit()	
+			elif (transaction == "transfer"):
+				self.transfer()		
+			elif (transaction == "logout"):
+				running = False
+			else:
+				print "Please enter a valid transaction type."	
+		return False	
+		
 
 class agent(object):
 	def __init__(self, type):
