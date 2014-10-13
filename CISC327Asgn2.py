@@ -9,17 +9,17 @@ Brad Guner 10059112
 class retail(object):
 	def __init__(self, type):
 		self.type = type
-	def withdraw():
+	def withdraw(self):
+		return 0
+	def deposit(self):
 		return 0 
-	def deposit():
+	def transfer(self):
 		return 0 
-	def transfer():
-		return 0 
-	def runRetailDay():
+	def runRetailDay(self):
 		running = True
 		while (running):
 			transaction = raw_input('Perform a transaction: ')
-			transaction.lowercase
+			transaction.lower()
 			if (transaction == "withdraw"):
 				self.withdraw()
 			elif (transaction == "deposit"):
@@ -36,21 +36,21 @@ class retail(object):
 class agent(object):
 	def __init__(self, type):
 		self.type = type
-	def withdraw():
+	def withdraw(self):
 		return 0 
-	def deposit():
+	def deposit(self):
 		return 0 
-	def transfer():
+	def transfer(self):
 		return 0 
-	def create():
+	def create(self):
 		return 0 
-	def delete():
+	def delete(self):
 		return 0 
-	def runAgentDay():
+	def runAgentDay(self):
 		running = True
 		while (running):
 			transaction = raw_input('Perform a transaction: ')
-			transaction.lowercase
+			transaction.lower()
 			if (transaction == "withdraw"):
 				self.withdraw()
 			elif (transaction == "deposit"):
@@ -72,12 +72,12 @@ def openBankingSystem():
 	loggedIn = True
 	while (loggedIn):
 		firstInput = raw_input('Type "login" to login: ')
-		firstInput.lowercase
+		firstInput.lower()
 		if (firstInput == "login"):
 			pickDay = True
 			while (pickDay):
 				dayType = raw_input('agent or retail: ')
-				dayType.lowercase
+				dayType.lower()
 				if (dayType == "retail"):
 					pickDay = False
 					retailDay = retail(dayType)
@@ -85,13 +85,18 @@ def openBankingSystem():
 				elif (dayType == "agent"):
 					pickDay = False	
 					agentDay = agent(dayType)
-					loggedIn = agentObject.runAgentDay()
+					loggedIn = agentDay.runAgentDay()
 				else: 
 					print "Please enter a valid input.\n"
 		else:
 			print "Please enter a valid input.\n"
+	#FILE SHOULD WRITE NOW BEFORE WE OFFICIALLY END DAY		
 	return openBankingSystem()			
 
-######	 MAIN PROGRAM 	######
+######	 MAIN PROGRAM 	  ######
 openBankingSystem()
+
+#ERROR AND TODO LOG
 #needs file writing
+#wont accept any whitespace on string
+#methods in each agent and retail
