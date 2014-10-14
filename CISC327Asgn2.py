@@ -24,7 +24,7 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
-					if (amount > 1000):
+					if (amount > 1000 || amount < 0):
 						print "Please enter a valid amount."
 					elif (self.dailylimit + amount > 1000):
 						print "This amount exceeds your daily limit."
@@ -49,7 +49,7 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
-					if (amount > 1000):
+					if (amount > 1000 || amount < 0):
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -77,7 +77,7 @@ class retail(object):
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount: '))
-							if (amount > 1000):
+							if (amount > 1000 || amount < 0):
 								print "Please enter a valid transfer amount."
 							else:
 								amt = False
