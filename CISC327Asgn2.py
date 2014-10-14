@@ -37,8 +37,7 @@ class retail(object):
 						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
 			else:
 				print "Please enter a valid account number."
-		return transactionInfo	
-		#return transactionInfo		
+		return transactionInfo		
 	
 	def deposit(self):
 		accNumInput = True
@@ -61,17 +60,45 @@ class retail(object):
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo	
-		#return transactionInfo
 		
 	def transfer(self):
-		return 0
+		accNumInput = True
+		accNumInput2 = True
+		while(accNumInput):
+			accNumTo = input('To Account Number: ')
+			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
+			if (1 == 1):
+				while (accNumInput2):
+					accNumFrom = input('From Account Number: ')
+					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
+					if (1 == 1):
+						accNumTo = False
+						accNumFrom = False
+						amt = True
+						while (amt):
+							amount = int(input('Transfer Amount: '))
+							if (amount > 1000):
+								print "Please enter a valid transfer amount."
+							else:
+								amt = False
+								#create string for write file
+								accNumTo = str(accNumTo)
+								accNumFrom = str(accNumFrom)
+								amount = str(amount)
+								transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+					else:
+						print "Please enter a valid account number."		
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo		
+
+
 		
 	#METHOD WHICH RUNS ANY TRANSACTIONS FOR A RETAIL DAY
 	#WILL WRITE ANY TRANSACTIONS TO FILE
 	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runRetailDay(self):
 		running = True
-		#READ IN CURRENT ACCOUNTS FILE GOES HERE
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
