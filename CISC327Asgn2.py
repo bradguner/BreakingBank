@@ -17,7 +17,7 @@ class retail(object):
 	def withdraw(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = raw_input('Account Number: ')
+			accNum = input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
@@ -43,7 +43,7 @@ class retail(object):
 	def deposit(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = raw_input('Account Number: ')
+			accNum = input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
@@ -82,7 +82,7 @@ class retail(object):
 		f = open(completeName,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
-			transaction = raw_input('Perform a transaction: ')
+			transaction = str(input('Perform a transaction: '))
 			transaction.lower()
 			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
@@ -118,7 +118,7 @@ class agent(object):
 	def runAgentDay(self):
 		running = True
 		while (running):
-			transaction = raw_input('Perform a transaction: ')
+			transaction = str(input('Perform a transaction: '))
 			transaction.lower()
 			if (transaction == "withdraw"):
 				self.withdraw()
@@ -141,13 +141,13 @@ def openBankingSystem():
 	loggedIn = True
 	while (loggedIn):
 		#GETS LOGIN TO START, STAGE 0
-		firstInput = raw_input('Type "login" to login: ')
+		firstInput = str(input('Type "login" to login: '))
 		firstInput.lower()
 		if (firstInput == "login"):
 			pickDay = True
 			while (pickDay):
 				#ACCEPTS INPUT FOR AGENT OR RETAIL, STAGE 1
-				dayType = raw_input('agent or retail: ')
+				dayType = str(input('agent or retail: '))
 				dayType.lower()
 				if (dayType == "retail"):
 					pickDay = False
@@ -165,7 +165,9 @@ def openBankingSystem():
 	return openBankingSystem()			
 
 ######	 MAIN PROGRAM 	  ######
+#open current accounts file
 openBankingSystem()
+#close curren accounts file
 
 #ERROR AND TODO LOG
 #wont accept any whitespace on string
