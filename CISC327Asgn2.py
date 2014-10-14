@@ -18,16 +18,19 @@ class retail(object):
 	def withdraw(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = input('Account Number: ')
+			accNum = raw_input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
-					if (amount > 1000 || amount < 0):
+					amount = amount*100
+					if (amount > 100000):
 						print "Please enter a valid amount."
-					elif (self.dailylimit + amount > 1000):
+					elif (amount < 0):
+						print "Please enter a valid amount."	
+					elif (self.dailylimit + amount > 100000):
 						print "This amount exceeds your daily limit."
 					else: 
 						self.dailylimit += amount
@@ -43,14 +46,17 @@ class retail(object):
 	def deposit(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = input('Account Number: ')
+			accNum = raw_input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
-					if (amount > 1000 || amount < 0):
+					amount = amount*100
+					if (amount > 100000):
+						print "Please enter a valid amount."
+					elif (amount < 0):
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -66,11 +72,11 @@ class retail(object):
 		accNumInput = True
 		accNumInput2 = True
 		while(accNumInput):
-			accNumTo = input('To Account Number: ')
+			accNumTo = raw_input('To Account Number: ')
 			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
 			if (1 == 1):
 				while (accNumInput2):
-					accNumFrom = input('From Account Number: ')
+					accNumFrom = raw_input('From Account Number: ')
 					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
 					if (1 == 1):
 						accNumTo = False
@@ -78,8 +84,11 @@ class retail(object):
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount: '))
-							if (amount > 1000 || amount < 0):
+							amount = amount*100
+							if (amount > 100000):
 								print "Please enter a valid transfer amount."
+							elif (amount < 0):
+								print "Please enter a valid transfer amount."	
 							else:
 								amt = False
 								#create string for write file
@@ -101,14 +110,14 @@ class retail(object):
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = 'C:/TransactionSummaryFiles/'
+		save_path = './TransactionSummaryFiles/'
 		file = 'Transaction_Summary_File__' + st + '.txt'
 		filename = file.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
-			transaction = str(input('Perform a transaction: '))
+			transaction = raw_input('Perform a transaction: ')
 			transaction.lower()
 			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
@@ -136,14 +145,17 @@ class agent(object):
 	def withdraw(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = input('Account Number: ')
+			accNum = raw_input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
-					if (amount > 9999.99 || amount < 0):
+					amount = amount*100
+					if (amount > 999999):
+						print "Please enter a valid amount."
+					elif (amount < 0):
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -158,15 +170,18 @@ class agent(object):
 	def deposit(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = input('Account Number: ')
+			accNum = raw_input('Account Number: ')
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (1 == 1): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
-					if (amount > 9999.99 || amount < 0):
+					amount = amount*100
+					if (amount > 999999):
 						print "Please enter a valid amount."
+					elif (amount < 0):
+						print "Please enter a valid amount."	
 					else: 
 						amt = False
 						#CREATE STRING TO WRITE TO FILE
@@ -181,20 +196,23 @@ class agent(object):
 		accNumInput = True
 		accNumInput2 = True
 		while(accNumInput):
-			accNumTo = input('To Account Number: ')
+			accNumTo = raw_input('To Account Number: ')
 			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
 			if (1 == 1):
 				while (accNumInput2):
-					accNumFrom = input('From Account Number: ')
+					accNumFrom = raw_input('From Account Number: ')
 					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
 					if (1 == 1):
 						accNumInput = False
 						accNumInput2 = False
 						amt = True
 						while (amt):
-							amount = int(input('Transfer Amount: '))
-							if (amount > 9999.99 || amount < 0):
+							amount = int(raw_input('Transfer Amount: '))
+							amount = amount*100
+							if (amount > 999999):
 								print "Please enter a valid transfer amount."
+							elif (amount > 999999):
+								print "Please enter a valid transfer amount."	
 							else:
 								amt = False
 								#create string for write file
@@ -264,14 +282,14 @@ class agent(object):
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = 'C:/TransactionSummaryFiles/'
+		save_path = './TransactionSummaryFiles/'
 		file = 'Transaction_Summary_File__' + st + '.txt'
 		filename = file.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
-			transaction = str(input('Perform a transaction: '))
+			transaction = raw_input('Perform a transaction: ')
 			transaction.lower()
 			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
@@ -302,13 +320,13 @@ def openBankingSystem():
 	loggedIn = True
 	while (loggedIn):
 		#GETS LOGIN TO START, STAGE 0
-		firstInput = str(input('Type "login" to login: '))
+		firstInput = raw_input('Type "login" to login: ')
 		firstInput.lower()
 		if (firstInput == "login"):
 			pickDay = True
 			while (pickDay):
 				#ACCEPTS INPUT FOR AGENT OR RETAIL, STAGE 1
-				dayType = str(input('agent or retail: '))
+				dayType = raw_input('agent or retail: ')
 				dayType.lower()
 				if (dayType == "retail"):
 					pickDay = False
