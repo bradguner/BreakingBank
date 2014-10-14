@@ -132,36 +132,127 @@ class retail(object):
 class agent(object):
 	def __init__(self, type):
 		self.type = type
+		
 	def withdraw(self):
-		return 0 
+		accNumInput = True
+		while (accNumInput):
+			accNum = input('Account Number: ')
+			#CHECK TO SEE IF VALID ACCOUNT NUMBER
+			if (1 == 1): #if account num is valid
+				amt = True
+				accNumInput = False
+				while (amt):
+					amount = int(input('Withdrawal Amount: '))
+					if (amount > 9999.99 || amount < 0):
+						print "Please enter a valid amount."
+					else: 
+						amt = False
+						#CREATE STRING TO WRITE TO FILE
+						accNum = str(accNum)
+						amount = str(amount)
+						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo		
+	
 	def deposit(self):
-		return 0 
+		accNumInput = True
+		while (accNumInput):
+			accNum = input('Account Number: ')
+			#CHECK TO SEE IF VALID ACCOUNT NUMBER
+			if (1 == 1): #if account num is valid
+				amt = True
+				accNumInput = False
+				while (amt):
+					amount = int(input('Deposit Amount: '))
+					if (amount > 9999.99 || amount < 0):
+						print "Please enter a valid amount."
+					else: 
+						amt = False
+						#CREATE STRING TO WRITE TO FILE
+						accNum = str(accNum)
+						amount = str(amount)
+						transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo	
+		
 	def transfer(self):
-		return 0 
+		accNumInput = True
+		accNumInput2 = True
+		while(accNumInput):
+			accNumTo = input('To Account Number: ')
+			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
+			if (1 == 1):
+				while (accNumInput2):
+					accNumFrom = input('From Account Number: ')
+					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
+					if (1 == 1):
+						accNumTo = False
+						accNumFrom = False
+						amt = True
+						while (amt):
+							amount = int(input('Transfer Amount: '))
+							if (amount > 9999.99 || amount < 0):
+								print "Please enter a valid transfer amount."
+							else:
+								amt = False
+								#create string for write file
+								accNumTo = str(accNumTo)
+								accNumFrom = str(accNumFrom)
+								amount = str(amount)
+								transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+					else:
+						print "Please enter a valid account number."		
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo	
+
 	def create(self):
-		return 0 
+		return 0
 	def delete(self):
-		return 0 
+		return 0		
+	
+	#METHOD WHICH RUNS ANY TRANSACTIONS FOR A RETAIL DAY
+	#WILL WRITE ANY TRANSACTIONS TO FILE
+	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runAgentDay(self):
 		running = True
+		#CREATES TRANSACTION SUMMARY FILE
+		ts = time.time()
+		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+		save_path = 'C:/TransactionSummaryFiles/'
+		file = 'Transaction_Summary_File__' + st + '.txt'
+		filename = file.replace(":", "_")
+		completeName = os.path.join(save_path, filename) 
+		f = open(completeName,'w')
 		while (running):
+			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = str(input('Perform a transaction: '))
 			transaction.lower()
+			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
-				self.withdraw()
+				newTrans = self.withdraw()
+				f.write(newTrans + '\n')
 			elif (transaction == "deposit"):
-				self.deposit()	
+				newTrans = self.deposit()
+				f.write(newTrans + '\n')
 			elif (transaction == "transfer"):
-				self.transfer()	
+				newTrans = self.transfer()
+				f.write(newTrans + '\n')
 			elif (transaction == "create"):
-				self.create()	
+				newTrans = self.create()
+				f.write(newTrans + '\n')
 			elif (transaction == "delete"):
-				self.delete()	
+				newTrans = self.delete()
+				f.write(newTrans + '\n')		
 			elif (transaction == "logout"):
+				f.close()
 				running = False
 			else:
 				print "Please enter a valid transaction type."	
-		return False				
+		return False
+					
 ###########################################################################################################	
 
 def openBankingSystem():
