@@ -9,6 +9,7 @@ import datetime
 import time
 import os.path
 
+############################################	RETAIL 	  #################################################
 class retail(object):
 	def __init__(self, type,dailylimit):
 		self.type = type
@@ -90,10 +91,8 @@ class retail(object):
 						print "Please enter a valid account number."		
 			else:
 				print "Please enter a valid account number."
-		return transactionInfo		
-
-
-		
+		return transactionInfo	
+	
 	#METHOD WHICH RUNS ANY TRANSACTIONS FOR A RETAIL DAY
 	#WILL WRITE ANY TRANSACTIONS TO FILE
 	#LOGOUT IS ACCEPTED AT THIS STAGE
@@ -127,8 +126,9 @@ class retail(object):
 			else:
 				print "Please enter a valid transaction type."	
 		return False	
+###########################################################################################################		
 		
-
+############################################	AGENT 	  #################################################		
 class agent(object):
 	def __init__(self, type):
 		self.type = type
@@ -162,7 +162,7 @@ class agent(object):
 			else:
 				print "Please enter a valid transaction type."	
 		return False				
-
+###########################################################################################################	
 
 def openBankingSystem():
 	loggedIn = True
