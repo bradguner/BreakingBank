@@ -79,8 +79,8 @@ class retail(object):
 					accNumFrom = raw_input('From Account Number: ')
 					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
 					if (1 == 1):
-						accNumTo = False
-						accNumFrom = False
+						accNumInput = False
+						accNumInput2 = False
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount: '))
