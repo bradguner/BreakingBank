@@ -5,28 +5,97 @@ Assignment #2
 Scott Wallace 10051890
 Brad Guner 10059112
 """
+import datetime
+import time
+import os.path
 
 class retail(object):
-	def __init__(self, type):
+	def __init__(self, type,dailylimit):
 		self.type = type
+		self.dailylimit = dailylimit
+		
 	def withdraw(self):
-		return 0
+		accNumInput = True
+		while (accNumInput):
+			accNum = raw_input('Account Number: ')
+			#CHECK TO SEE IF VALID ACCOUNT NUMBER
+			if (1 == 1): #if account num is valid
+				amt = True
+				accNumInput = False
+				while (amt):
+					amount = int(input('Withdrawal Amount: '))
+					if (amount > 1000):
+						print "Please enter a valid amount."
+					elif (self.dailylimit + amount > 1000):
+						print "This amount exceeds your daily limit."
+					else: 
+						self.dailylimit += amount
+						amt = False
+						#CREATE STRING TO WRITE TO FILE
+						accNum = str(accNum)
+						amount = str(amount)
+						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo	
+		#return transactionInfo		
+	
 	def deposit(self):
-		return 0 
+		accNumInput = True
+		while (accNumInput):
+			accNum = raw_input('Account Number: ')
+			#CHECK TO SEE IF VALID ACCOUNT NUMBER
+			if (1 == 1): #if account num is valid
+				amt = True
+				accNumInput = False
+				while (amt):
+					amount = int(input('Deposit Amount: '))
+					if (amount > 1000):
+						print "Please enter a valid amount."
+					else: 
+						amt = False
+						#CREATE STRING TO WRITE TO FILE
+						accNum = str(accNum)
+						amount = str(amount)
+						transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+			else:
+				print "Please enter a valid account number."
+		return transactionInfo	
+		#return transactionInfo
+		
 	def transfer(self):
-		return 0 
+		return 0
+		
+	#METHOD WHICH RUNS ANY TRANSACTIONS FOR A RETAIL DAY
+	#WILL WRITE ANY TRANSACTIONS TO FILE
+	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runRetailDay(self):
 		running = True
+		#READ IN CURRENT ACCOUNTS FILE GOES HERE
+		#CREATES TRANSACTION SUMMARY FILE
+		ts = time.time()
+		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+		save_path = 'C:/TransactionSummaryFiles/'
+		file = 'Transaction_Summary_File__' + st + '.txt'
+		filename = file.replace(":", "_")
+		completeName = os.path.join(save_path, filename) 
+		f = open(completeName,'w')
 		while (running):
+			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
 			transaction.lower()
+			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
-				self.withdraw()
+				newTrans = self.withdraw()
+				f.write(newTrans + '\n')
 			elif (transaction == "deposit"):
-				self.deposit()	
+				newTrans = self.deposit()
+				f.write(newTrans + '\n')
 			elif (transaction == "transfer"):
-				self.transfer()		
+				newTrans = self.transfer()
+				f.write(newTrans + '\n')
 			elif (transaction == "logout"):
+				f.close()
 				running = False
 			else:
 				print "Please enter a valid transaction type."	
@@ -71,16 +140,18 @@ class agent(object):
 def openBankingSystem():
 	loggedIn = True
 	while (loggedIn):
+		#GETS LOGIN TO START, STAGE 0
 		firstInput = raw_input('Type "login" to login: ')
 		firstInput.lower()
 		if (firstInput == "login"):
 			pickDay = True
 			while (pickDay):
+				#ACCEPTS INPUT FOR AGENT OR RETAIL, STAGE 1
 				dayType = raw_input('agent or retail: ')
 				dayType.lower()
 				if (dayType == "retail"):
 					pickDay = False
-					retailDay = retail(dayType)
+					retailDay = retail(dayType,0)
 					loggedIn = retailDay.runRetailDay()
 				elif (dayType == "agent"):
 					pickDay = False	
@@ -90,13 +161,13 @@ def openBankingSystem():
 					print "Please enter a valid input.\n"
 		else:
 			print "Please enter a valid input.\n"
-	#FILE SHOULD WRITE NOW BEFORE WE OFFICIALLY END DAY		
+	#STARTS OVER AGAIN AFTER LOGOUT AT STAGE 0
 	return openBankingSystem()			
 
 ######	 MAIN PROGRAM 	  ######
 openBankingSystem()
 
 #ERROR AND TODO LOG
-#needs file writing
 #wont accept any whitespace on string
 #methods in each agent and retail
+#code needs comments and variable names may need work
