@@ -25,12 +25,8 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
-<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 100000):
-=======
-					if (amount > 1000 | amount < 0):
->>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					elif (amount < 0):
 						print "Please enter a valid amount."	
@@ -58,14 +54,11 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
-<<<<<<< Updated upstream
+
 					amount = amount*100
 					if (amount > 100000):
 						print "Please enter a valid amount."
 					elif (amount < 0):
-=======
-					if (amount > 1000 | amount < 0):
->>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -94,12 +87,9 @@ class retail(object):
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount: '))
-<<<<<<< Updated upstream
+
 							amount = amount*100
 							if (amount > 100000):
-=======
-							if (amount > 1000 | amount < 0):
->>>>>>> Stashed changes
 								print "Please enter a valid transfer amount."
 							elif (amount < 0):
 								print "Please enter a valid transfer amount."	
@@ -198,7 +188,7 @@ class retail(object):
 				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
 			elif (len(acctName) > 15):
 				newAcctName = ""
-				while (len(newAcctName) < 15)
+				while (len(newAcctName) < 15):
 					for char in acctName:
 						newAcctName += char
 				fileLine += newAcctName
@@ -227,14 +217,10 @@ class agent(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
-<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 999999):
 						print "Please enter a valid amount."
 					elif (amount < 0):
-=======
-					if (amount > 9999.99 | amount < 0):
->>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -257,12 +243,8 @@ class agent(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
-<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 999999):
-=======
-					if (amount > 9999.99 | amount < 0):
->>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					elif (amount < 0):
 						print "Please enter a valid amount."	
@@ -292,14 +274,9 @@ class agent(object):
 						accNumInput2 = False
 						amt = True
 						while (amt):
-<<<<<<< Updated upstream
 							amount = int(raw_input('Transfer Amount: '))
 							amount = amount*100
 							if (amount > 999999):
-=======
-							amount = int(input('Transfer Amount: '))
-							if (amount > 9999.99 | amount < 0):
->>>>>>> Stashed changes
 								print "Please enter a valid transfer amount."
 							elif (amount < 0):
 								print "Please enter a valid transfer amount."	
@@ -322,9 +299,9 @@ class agent(object):
 		accNameInput = True
 		while (accNumInput):
 			accNum = int(input('Enter your desired account number: '))
-<<<<<<< Updated upstream
 			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
+<<<<<<< HEAD
 			if (1 == 1):
 				accNumInput = False
 				while (accNameInput): 
@@ -342,10 +319,13 @@ class agent(object):
 			else:
 				print "Please enter a valid account number."
 =======
+=======
+			
+>>>>>>> FETCH_HEAD
 			#if (accNum < 1000000 && accNum >= 0):	#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#	#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
 			if (1 == 1):
-					accNumInput = False
+					accNameInput = False
 					while (accNameInput): 
 						accName = str(input('Enter your desired account name: '))
 						if (accName.Length > 15 | accName.Length == 0):
@@ -361,7 +341,6 @@ class agent(object):
 					print "Please enter a valid account number."
 			#else:
 			#	print "Please anter a valid account number."
->>>>>>> Stashed changes
 		return transactionInfo
 
 	def delete(self):
@@ -476,7 +455,7 @@ class agent(object):
 				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
 			elif (len(acctName) > 15):
 				newAcctName = ""
-				while (len(newAcctName) < 15)
+				while (len(newAcctName) < 15):
 					for char in acctName:
 						newAcctName += char
 				fileLine += newAcctName
