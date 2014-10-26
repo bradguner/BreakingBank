@@ -10,6 +10,9 @@ shell script
 *not reading in files right now
 *for all inputs/
 
+write all the input tests
+write all the expected outputs 
+
 failure log
 
 run until passes all tests
