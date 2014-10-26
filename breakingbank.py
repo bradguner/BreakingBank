@@ -409,6 +409,15 @@ def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
 				fileLine += acctName
 			return fileLine
 
+def readAcctFile():
+	#read file, figure out file's name
+	#read line from file
+	#strip line
+	#add to the accounts list
+	#keep going until '000000' is hit
+	#return list
+	return 1
+
 def openBankingSystem():
 	loggedIn = True
 	while (loggedIn):
