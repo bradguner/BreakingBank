@@ -301,7 +301,6 @@ class agent(object):
 			accNum = int(input('Enter your desired account number: '))
 			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
-<<<<<<< HEAD
 			if (1 == 1):
 				accNumInput = False
 				while (accNameInput): 
@@ -318,10 +317,6 @@ class agent(object):
 						transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 			else:
 				print "Please enter a valid account number."
-=======
-=======
-			
->>>>>>> FETCH_HEAD
 			#if (accNum < 1000000 && accNum >= 0):	#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#	#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
 			if (1 == 1):
