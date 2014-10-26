@@ -431,6 +431,9 @@ def openBankingSystem():
 					loggedIn = agentDay.runAgentDay()
 				else: 
 					print "Please enter a valid input.\n"
+		elif (firstInput == "stop"):
+			#Entering stop will kill the program
+			return 0		
 		else:
 			print "Please enter a valid input.\n"
 	#STARTS OVER AGAIN AFTER LOGOUT AT STAGE 0
@@ -439,9 +442,6 @@ def openBankingSystem():
 ######	 MAIN PROGRAM 	  ######
 #open current accounts file
 openBankingSystem()
-#close curren accounts file
+#close current accounts file
 
-#ERROR AND TODO LOG
-#wont accept any whitespace on string
-#methods in each agent and retail
-#code needs comments and variable names may need work
+
