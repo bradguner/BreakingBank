@@ -1,0 +1,15 @@
+TO DO
+
+validation == compare, expected log and sum folders with, outputs log and sum folders
+issue* time stamped transsummfile right now
+
+write all the input tests
+write all the expected outputs 
+
+shell script
+*not reading in files right now
+*for all inputs/
+
+failure log
+
+run until passes all tests
