@@ -1,7 +1,9 @@
 #!/bin/bash
 FILE="./inputs/test1.txt"
+printf "Good so far"
 while read line
 do
-echo $line
+	printf $line
+	echo $line
 done | python breakingbank.py > ./outputs/outputs.txt
 
