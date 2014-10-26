@@ -42,8 +42,8 @@ class retail(object):
 						#CREATE STRING TO WRITE TO FILE
 						accNum = str(accNum)
 						amount = str(amount)
-						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
-						transactionInfo = formatFileLine('02', accNum, 'BBBBBB', amount, )
+						#transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						transactionInfo = formatFileLine('02', accNum, 'BBBBBB', amount, 'NNNNNNNNNNNNNNN')
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo		
@@ -72,7 +72,8 @@ class retail(object):
 						#CREATE STRING TO WRITE TO FILE
 						accNum = str(accNum)
 						amount = str(amount)
-						transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						#transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						transactionInfo = formatFileLine('01', accNum, 'BBBBBB', amount, 'NNNNNNNNNNNNNNN')
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo	
@@ -108,7 +109,8 @@ class retail(object):
 								accNumTo = str(accNumTo)
 								accNumFrom = str(accNumFrom)
 								amount = str(amount)
-								transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+								#transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+								transactionInfo = formatFileLine('01', accNumTo, accNumFrom, amount, 'NNNNNNNNNNNNNNN')
 					else:
 						print "Please enter a valid account number."		
 			else:
@@ -239,7 +241,8 @@ class agent(object):
 						#CREATE STRING TO WRITE TO FILE
 						accNum = str(accNum)
 						amount = str(amount)
-						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						#transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						transactionInfo = formatFileLine('02', accNum, 'BBBBBB', amount, 'NNNNNNNNNNNNNNN')
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo		
@@ -268,7 +271,8 @@ class agent(object):
 						#CREATE STRING TO WRITE TO FILE
 						accNum = str(accNum)
 						amount = str(amount)
-						transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						#transactionInfo = '01_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						transactionInfo = formatFileLine('01', accNum, 'BBBBBB', amount, 'NNNNNNNNNNNNNNN')
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo	
@@ -305,7 +309,8 @@ class agent(object):
 								accNumTo = str(accNumTo)
 								accNumFrom = str(accNumFrom)
 								amount = str(amount)
-								transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+								#transactionInfo = '03_' + accNumTo + '_' + accNumFrom + '_' + amount
+								transactionInfo = formatFileLine('03', accNumTo, accNumFrom, amount, 'NNNNNNNNNNNNNNN')
 					else:
 						print "Please enter a valid account number."		
 			else:
@@ -332,7 +337,8 @@ class agent(object):
 						#create string for write file
 						accNum = str(accNum)
 						accName = str(accName)
-						transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+						#transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+						transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 			else:
 				print "Please enter a valid account number."
 =======
@@ -349,7 +355,8 @@ class agent(object):
 							#create string for write file
 							accNum = str(accNum)
 							accName = str(accName)
-							transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+							#transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+							transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 			else:
 					print "Please enter a valid account number."
 			#else:
@@ -376,7 +383,8 @@ class agent(object):
 						#create string for write file
 						accNum = str(accNum)
 						accName = str(accName)
-						transactionInfo = '05_' + accNum + '_' + accName #proper formatting on end of string is needed
+						#transactionInfo = '05_' + accNum + '_' + accName #proper formatting on end of string is needed
+						transactionInfo = formatFileLine('05', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo
