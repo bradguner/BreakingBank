@@ -1,7 +1,0 @@
-TO DO
-
-all input tests, 4/50
-all expected outputs, 8,100
-shell script + validation
-failure log
-run until works

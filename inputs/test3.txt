@@ -1,4 +1,0 @@
-withdraw
-login
-agent
-logout
