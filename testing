@@ -1,0 +1,7 @@
+#!/bin/bash
+FILE="./inputs/test1.txt"
+while read line
+do
+echo $line
+done | python CISC327Asgn2.py < ./outputs.txt
+
