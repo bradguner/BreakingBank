@@ -25,8 +25,12 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
+<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 100000):
+=======
+					if (amount > 1000 | amount < 0):
+>>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					elif (amount < 0):
 						print "Please enter a valid amount."	
@@ -39,6 +43,7 @@ class retail(object):
 						accNum = str(accNum)
 						amount = str(amount)
 						transactionInfo = '02_' + accNum + '_' + amount #NEEDS PROPER FORMATTING STILL
+						transactionInfo = formatFileLine('02', accNum, 'BBBBBB', amount, )
 			else:
 				print "Please enter a valid account number."
 		return transactionInfo		
@@ -53,10 +58,14 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
+<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 100000):
 						print "Please enter a valid amount."
 					elif (amount < 0):
+=======
+					if (amount > 1000 | amount < 0):
+>>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -84,8 +93,12 @@ class retail(object):
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount: '))
+<<<<<<< Updated upstream
 							amount = amount*100
 							if (amount > 100000):
+=======
+							if (amount > 1000 | amount < 0):
+>>>>>>> Stashed changes
 								print "Please enter a valid transfer amount."
 							elif (amount < 0):
 								print "Please enter a valid transfer amount."	
@@ -134,7 +147,67 @@ class retail(object):
 				running = False
 			else:
 				print "Please enter a valid transaction type."	
-		return False	
+		return False
+
+	def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
+			transCode = str(transCode)
+			firstAcctNum = str(firstAcctNum)
+			secondAcctNum = str(secondAcctNum)
+			acctAmt = str(acctAmt)
+			acctName = str(acctName)
+			#transaction code
+			if (transCode.len() == 2):
+				fileLine = transCode + "_"	#line: CC_
+			#first account number
+			if (len(firstAcctNum) == 6):
+				firstAcctNum += "_"
+				fileLine += firstAcctNum	#line: CC_AAAAAA_
+			elif (len(firstAcctNum) < 6 and len(firstAcctNum) > 0): #pads 0 to beginning of account numbers
+				acctLength = len(firstAcctNum)
+				diff = 6 - acctLength
+				for i in range(diff):
+					firstAcctNum = "0" + firstAcctNum
+				firstAcctNum += "_"
+				fileLine += firstAcctNum
+			#second account number
+			if (len(secondAcctNum) == 6):
+				secondAcctNum += "_"
+				fileLine += secondAcctNum	#line: CC_AAAAAA_BBBBBB_
+			elif (len(secondAcctNum) < 6 and len(secondAcctNum) > 0):
+				acctLength = len(secondAcctNum)
+				diff = 6 - acctLength
+				for i in range(diff):
+					secondAcctNum = "0" + secondAcctNum
+				secondAcctNum += "_"
+				fileLine += secondAcctNum
+			#transaction amount
+			if (len(acctAmt) == 8):
+				acctAmt += "_"
+				fileLine += acctAmt		#line: CC_AAAAAA_BBBBBB_MMMMMMMM_
+			elif (len(acctAmt) < 8 and len(acctAmt) > 0):
+				amtLength = len(acctAmt)
+				diff = 8 - amtLength
+				for i in range(diff):
+					acctAmt = "0" + acctAmt
+				acctAmt += "_"
+				fileLine += acctAmt
+			#account name
+			if (len(acctName) == 15):
+				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
+			elif (len(acctName) > 15):
+				newAcctName = ""
+				while (len(newAcctName) < 15)
+					for char in acctName:
+						newAcctName += char
+				fileLine += newAcctName
+			else:
+				nameLength = len(acctName)
+				diff = 15 - nameLength
+				for i in range(diff):
+					acctName = "0" + acctName
+				acctName += "_"
+				fileLine += acctName
+			return fileLine
 ###########################################################################################################		
 		
 ############################################	AGENT 	  #################################################		
@@ -152,10 +225,14 @@ class agent(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount: '))
+<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 999999):
 						print "Please enter a valid amount."
 					elif (amount < 0):
+=======
+					if (amount > 9999.99 | amount < 0):
+>>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -177,8 +254,12 @@ class agent(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount: '))
+<<<<<<< Updated upstream
 					amount = amount*100
 					if (amount > 999999):
+=======
+					if (amount > 9999.99 | amount < 0):
+>>>>>>> Stashed changes
 						print "Please enter a valid amount."
 					elif (amount < 0):
 						print "Please enter a valid amount."	
@@ -207,9 +288,14 @@ class agent(object):
 						accNumInput2 = False
 						amt = True
 						while (amt):
+<<<<<<< Updated upstream
 							amount = int(raw_input('Transfer Amount: '))
 							amount = amount*100
 							if (amount > 999999):
+=======
+							amount = int(input('Transfer Amount: '))
+							if (amount > 9999.99 | amount < 0):
+>>>>>>> Stashed changes
 								print "Please enter a valid transfer amount."
 							elif (amount < 0):
 								print "Please enter a valid transfer amount."	
@@ -231,6 +317,7 @@ class agent(object):
 		accNameInput = True
 		while (accNumInput):
 			accNum = int(input('Enter your desired account number: '))
+<<<<<<< Updated upstream
 			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
 			if (1 == 1):
@@ -248,6 +335,26 @@ class agent(object):
 						transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
 			else:
 				print "Please enter a valid account number."
+=======
+			#if (accNum < 1000000 && accNum >= 0):	#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
+			#	#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
+			if (1 == 1):
+					accNumInput = False
+					while (accNameInput): 
+						accName = str(input('Enter your desired account name: '))
+						if (accName.Length > 15 | accName.Length == 0):
+							print "Please enter a valid account name."
+						else:
+							accNameInput = False
+							#create string for write file
+							accNum = str(accNum)
+							accName = str(accName)
+							transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+			else:
+					print "Please enter a valid account number."
+			#else:
+			#	print "Please anter a valid account number."
+>>>>>>> Stashed changes
 		return transactionInfo
 
 	def delete(self):
@@ -313,6 +420,66 @@ class agent(object):
 			else:
 				print "Please enter a valid transaction type."	
 		return False
+
+		def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
+			transCode = str(transCode)
+			firstAcctNum = str(firstAcctNum)
+			secondAcctNum = str(secondAcctNum)
+			acctAmt = str(acctAmt)
+			acctName = str(acctName)
+			#transaction code
+			if (transCode.len() == 2):
+				fileLine = transCode + "_"	#line: CC_
+			#first account number
+			if (len(firstAcctNum) == 6):
+				firstAcctNum += "_"
+				fileLine += firstAcctNum	#line: CC_AAAAAA_
+			elif (len(firstAcctNum) < 6 and len(firstAcctNum) > 0): #pads 0 to beginning of account numbers
+				acctLength = len(firstAcctNum)
+				diff = 6 - acctLength
+				for i in range(diff):
+					firstAcctNum = "0" + firstAcctNum
+				firstAcctNum += "_"
+				fileLine += firstAcctNum
+			#second account number
+			if (len(secondAcctNum) == 6):
+				secondAcctNum += "_"
+				fileLine += secondAcctNum	#line: CC_AAAAAA_BBBBBB_
+			elif (len(secondAcctNum) < 6 and len(secondAcctNum) > 0):
+				acctLength = len(secondAcctNum)
+				diff = 6 - acctLength
+				for i in range(diff):
+					secondAcctNum = "0" + secondAcctNum
+				secondAcctNum += "_"
+				fileLine += secondAcctNum
+			#transaction amount
+			if (len(acctAmt) == 8):
+				acctAmt += "_"
+				fileLine += acctAmt		#line: CC_AAAAAA_BBBBBB_MMMMMMMM_
+			elif (len(acctAmt) < 8 and len(acctAmt) > 0):
+				amtLength = len(acctAmt)
+				diff = 8 - amtLength
+				for i in range(diff):
+					acctAmt = "0" + acctAmt
+				acctAmt += "_"
+				fileLine += acctAmt
+			#account name
+			if (len(acctName) == 15):
+				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
+			elif (len(acctName) > 15):
+				newAcctName = ""
+				while (len(newAcctName) < 15)
+					for char in acctName:
+						newAcctName += char
+				fileLine += newAcctName
+			else:
+				nameLength = len(acctName)
+				diff = 15 - nameLength
+				for i in range(diff):
+					acctName = "0" + acctName
+				acctName += "_"
+				fileLine += acctName
+			return fileLine
 					
 ###########################################################################################################	
 
