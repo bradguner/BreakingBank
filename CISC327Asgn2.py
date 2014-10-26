@@ -59,7 +59,6 @@ class retail(object):
 					if (amount > 100000):
 						print "Please enter a valid amount."
 					elif (amount < 0):
-					if (amount > 1000 | amount < 0):
 						print "Please enter a valid amount."
 					else: 
 						amt = False
@@ -187,7 +186,7 @@ class retail(object):
 				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
 			elif (len(acctName) > 15):
 				newAcctName = ""
-				while (len(newAcctName) < 15)
+				while (len(newAcctName) < 15):
 					for char in acctName:
 						newAcctName += char
 				fileLine += newAcctName
@@ -274,7 +273,6 @@ class agent(object):
 							amount = int(raw_input('Transfer Amount: '))
 							amount = amount*100
 							if (amount > 999999):
-							amount = int(input('Transfer Amount: '))
 								print "Please enter a valid transfer amount."
 							elif (amount < 0):
 								print "Please enter a valid transfer amount."	
@@ -430,7 +428,7 @@ class agent(object):
 				fileLine += acctName	#line: CC_AAAAAA_BBBBBB_MMMMMMMM_NNNNNNNNNNNNNNN
 			elif (len(acctName) > 15):
 				newAcctName = ""
-				while (len(newAcctName) < 15)
+				while (len(newAcctName) < 15):
 					for char in acctName:
 						newAcctName += char
 				fileLine += newAcctName
