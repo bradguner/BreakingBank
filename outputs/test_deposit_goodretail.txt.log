@@ -6,4 +6,17 @@ Perform a transaction: deposit
 
 Account Number: 111111
 
-Deposit Amount (Cents) : 
+Please enter a valid account number.
+Account Number: 10000
+
+Please enter a valid account number.
+Account Number: logout
+
+Please enter a valid account number.
+Account Number: stop
+
+Please enter a valid account number.
+Account Number: 
+
+Please enter a valid account number.
+Account Number: 

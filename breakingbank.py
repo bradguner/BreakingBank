@@ -261,13 +261,15 @@ class agent(object):
 			print str(accNum) + "\n"
 			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
-			if (acctNumExist(accNum)):
+			if (not acctNumExist(accNum)):
 				accNumInput = False
 				while (accNameInput): 
 					accName = raw_input('Enter your desired account name: ')
 					print str(accName) + "\n"
-					if (len(accName) > 15 | len(accName) == 0):
+					if (len(accName) > 15):
 						print "Please enter a valid account name."
+					elif (len(accName) == 0):
+						print "Please enter a valid account name."	
 					else:
 						#create account number here
 						accNameInput = False
@@ -287,13 +289,13 @@ class agent(object):
 			accNum = int(input('Enter the account number: '))
 			print str(accNum) + "\n"
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER EXISTS
-			if (acctNumExist(accNum)):
+			if (not acctNumExist(accNum)):
 				accNumInput = False
 				while (accNameInput):
 					accName = raw_input('Enter the account name: ')
 					print str(accName) + "\n"
 					#CHECK TO SEE IF INPUT ACCOUNT NAME MATCHES ACCOUNT NUMBER
-					if (1 == 0):
+					if (1 == 0): #backend thing
 						print "Please enter the proper account name for this account."
 					else:
 						#delete account now
@@ -423,7 +425,7 @@ def readAcctFile():
 	list = f.readlines()
 	for x in range(len(list)):
 		list[x] = list[x].strip()
-		#list[x] = int(list[x])
+		list[x] = int(list[x])
 	f.close()
 	return list
 

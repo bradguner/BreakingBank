@@ -2,14 +2,14 @@ Type "login" to login: login
 
 agent or retail: agent
 
-Perform a transaction: deposit
+Perform a transaction: delete
 
-Account Number: 111112
+Enter the account number: 123456
 
 Please enter a valid account number.
-Account Number: 111111
+Enter the account number: 111111
 
-Deposit Amount (Cents): 10000
+Enter the account name: Test Name
 
 Perform a transaction: logout
 

@@ -78,4 +78,78 @@ Traceback (most recent call last):\
 ValueError: invalid literal for int() with base 10: 'logout'\
 BAD TEST CASE\
 also for running test_withdraw_retaillimit.txt\
-============}
+============\
+running test_withdraw_goodretail.txt\
+  File "../breakingbank.py", line 264\
+    if (!acctNumExist(accNum)):\
+        ^\
+SyntaxError: invalid syntax\
+=============\
+Type "login" to login: login\
+\
+agent or retail: agent\
+\
+Perform a transaction: create\
+\
+Enter your desired account number: 111111\
+\
+Please enter a valid account number.\
+Enter your desired account number: 1111111\
+\
+Enter your desired account name: 234567\
+\
+Perform a transaction: Test Name\
+\
+Please enter a valid transaction type.\
+Perform a transaction: logout\
+\
+Type "login" to login: stop\
+========\
+agent or retail: agent\
+\
+Perform a transaction: create\
+\
+Enter your desired account number: 123456\
+\
+Enter your desired account name: Test Name\
+\
+Perform a transaction: withdraw\
+\
+Account Number: 123456\
+\
+Please enter a valid account number.\
+Account Number: 111111\
+\
+Please enter a valid account number.\
+Account Number: 10000\
+\
+Please enter a valid account number.\
+Account Number: logout\
+\
+Please enter a valid account number.\
+Account Number: stop\
+\
+Please enter a valid account number.\
+Account Number: \
+\
+Please enter a valid account number.\
+Account Number: \
+test create transpostcreation\
+===========\
+Type "login" to login: login\
+\
+agent or retail: agent\
+\
+Perform a transaction: delete\
+\
+Enter the account number: 123456\
+\
+Enter the account name: 111111\
+\
+Perform a transaction: Test Name\
+\
+Please enter a valid transaction type.\
+Perform a transaction: logout\
+\
+Type "login" to login: stop\
+delete bad accnum}

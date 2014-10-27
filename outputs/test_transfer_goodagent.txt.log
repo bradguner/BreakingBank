@@ -2,24 +2,24 @@ Type "login" to login: login
 
 agent or retail: agent
 
-Perform a transaction: withdraw
+Perform a transaction: transfer
 
-Account Number: 111111
-
-Please enter a valid account number.
-Account Number: 1000000000
+To Account Number: 111111
 
 Please enter a valid account number.
-Account Number: 10000
+To Account Number: 222222
 
 Please enter a valid account number.
-Account Number: logout
+To Account Number: 10000
 
 Please enter a valid account number.
-Account Number: stop
+To Account Number: logout
 
 Please enter a valid account number.
-Account Number: 
+To Account Number: stop
 
 Please enter a valid account number.
-Account Number: 
+To Account Number: 
+
+Please enter a valid account number.
+To Account Number: 

@@ -6,5 +6,9 @@ Perform a transaction: create
 
 Enter your desired account number: 123456
 
-Please enter a valid account number.
-Enter your desired account number: 
+Enter your desired account name: Test
+
+Perform a transaction: logout
+
+Type "login" to login: stop
+
