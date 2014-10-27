@@ -1,0 +1,5 @@
+Type "login" to login: login 
+
+agent or retail: agent 
+
+Perform a transaction: Type "login" to login: 

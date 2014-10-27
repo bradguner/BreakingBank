@@ -112,11 +112,18 @@ class retail(object):
 	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runRetailDay(self):
 		running = True
+		"""
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 		save_path = './TransactionSummaryFiles/'
 		file = 'Transaction_Summary_File__' + st + '.txt'
+		filename = file.replace(":", "_")
+		completeName = os.path.join(save_path, filename) 
+		f = open(completeName,'w')
+		"""
+		save_path = './TransactionSummaryFiles/'
+		file = 'transsummfile.txt'
 		filename = file.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
@@ -310,11 +317,18 @@ class agent(object):
 	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runAgentDay(self):
 		running = True
+		"""
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 		save_path = './TransactionSummaryFiles/'
 		file = 'Transaction_Summary_File__' + st + '.txt'
+		filename = file.replace(":", "_")
+		completeName = os.path.join(save_path, filename) 
+		f = open(completeName,'w')
+		"""
+		save_path = './TransactionSummaryFiles/'
+		file = 'transsummfile.txt'
 		filename = file.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
@@ -424,17 +438,22 @@ def openBankingSystem():
 		#GETS LOGIN TO START, STAGE 0
 		firstInput = raw_input('Type "login" to login: ')
 		firstInput.lower()
+		firstInput = str(firstInput)
 		if (firstInput == "login"):
+			print "login \n"
 			pickDay = True
 			while (pickDay):
 				#ACCEPTS INPUT FOR AGENT OR RETAIL, STAGE 1
 				dayType = raw_input('agent or retail: ')
 				dayType.lower()
+				dayType = str(dayType)
 				if (dayType == "retail"):
+					print "retail \n"
 					pickDay = False
 					retailDay = retail(dayType,0)
 					loggedIn = retailDay.runRetailDay()
 				elif (dayType == "agent"):
+					print "agent \n"
 					pickDay = False	
 					agentDay = agent(dayType)
 					loggedIn = agentDay.runAgentDay()

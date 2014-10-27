@@ -1,9 +1,9 @@
 #!/bin/bash
 FILE="./inputs/test1.txt"
-printf "Good so far"
-while read line
+cat $FILE
+cat $FILE | while read line 
 do
-	printf $line
 	echo $line
-done | python breakingbank.py > ./outputs/outputs.txt
+done | python breakingbank.py > ./outputs/log/test1.txt
+cp ./TransactionSummaryFiles/transsummfile.txt ./outputs/sum/test1.txt #this needs to be fixed
 
