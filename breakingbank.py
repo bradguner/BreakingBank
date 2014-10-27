@@ -19,9 +19,9 @@ class retail(object):
 		accNumInput = True
 		while (accNumInput):
 			accNum = raw_input('Account Number: ')
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
-			if (1 == 1): #if account num is valid
+			if (acctNumExist(accNum)): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
@@ -50,9 +50,9 @@ class retail(object):
 		accNumInput = True
 		while (accNumInput):
 			accNum = raw_input('Account Number: ')
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
-			if (1 == 1): #if account num is valid
+			if (acctNumExist(accNum)): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
@@ -79,14 +79,14 @@ class retail(object):
 		accNumInput2 = True
 		while(accNumInput):
 			accNumTo = raw_input('To Account Number: ')
-			print accNumTo + "\n"
+			print str(accNumTo) + "\n"
 			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
-			if (1 == 1):
+			if (acctNumExist(accNumTo)):
 				while (accNumInput2):
 					accNumFrom = raw_input('From Account Number: ')
-					print accNumFrom + "\n"
+					print str(accNumFrom) + "\n"
 					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
-					if (1 == 1):
+					if (acctNumExist(accNumFrom)):
 						accNumInput = False
 						accNumInput2 = False
 						amt = True
@@ -163,9 +163,9 @@ class agent(object):
 		accNumInput = True
 		while (accNumInput):
 			accNum = raw_input('Account Number: ')
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
-			if (1 == 1): #if account num is valid
+			if (acctNumExist(accNum)): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
@@ -191,14 +191,14 @@ class agent(object):
 		accNumInput = True
 		while (accNumInput):
 			accNum = raw_input('Account Number: ')
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
-			if (1 == 1): #if account num is valid
+			if (acctNumExist(accNum)): #if account num is valid
 				amt = True
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount (Cents): '))
-					print amount + "\n"
+					print str(amount) + "\n"
 					#amount = amount*100
 					if (amount > 999999):
 						print "Please enter a valid amount."
@@ -220,14 +220,14 @@ class agent(object):
 		accNumInput2 = True
 		while(accNumInput):
 			accNumTo = raw_input('To Account Number: ')
-			print accNumTo + "\n"
+			print str(accNumTo) + "\n"
 			#CHECK to SEE IF FIRST ACCOUNT NUMBER IS VALID
-			if (1 == 1):
+			if (acctNumExist(accNumTo)):
 				while (accNumInput2):
 					accNumFrom = raw_input('From Account Number: ')
-					print accNumFrom + "\n"
+					print str(accNumFrom) + "\n"
 					#CHECK TO SEE IF SECOND ACCOUNT NUMBER IS VALID
-					if (1 == 1):
+					if (acctNumExist(accNumFrom)):
 						accNumInput = False
 						accNumInput2 = False
 						amt = True
@@ -258,14 +258,14 @@ class agent(object):
 		accNameInput = True
 		while (accNumInput):
 			accNum = int(input('Enter your desired account number: '))
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
-			if (1 == 1):
+			if (acctNumExist(accNum)):
 				accNumInput = False
 				while (accNameInput): 
 					accName = raw_input('Enter your desired account name: ')
-					print accName + "\n"
+					print str(accName) + "\n"
 					if (len(accName) > 15 | len(accName) == 0):
 						print "Please enter a valid account name."
 					else:
@@ -278,25 +278,6 @@ class agent(object):
 						transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 			else:
 				print "Please enter a valid account number."
-			#if (accNum < 1000000 && accNum >= 0):	#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
-			#	#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
-			if (1 == 1):
-					accNameInput = False
-					while (accNameInput): 
-						accName = str(input('Enter your desired account name: '))
-						if (accName.Length > 15 | accName.Length == 0):
-							print "Please enter a valid account name."
-						else:
-							accNameInput = False
-							#create string for write file
-							accNum = str(accNum)
-							accName = str(accName)
-							#transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
-							transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
-			else:
-					print "Please enter a valid account number."
-			#else:
-			#	print "Please anter a valid account number."
 		return transactionInfo
 
 	def delete(self):
@@ -304,13 +285,13 @@ class agent(object):
 		accNameInput = True
 		while (accNumInput):
 			accNum = int(input('Enter the account number: '))
-			print accNum + "\n"
+			print str(accNum) + "\n"
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER EXISTS
-			if (1 == 1):
+			if (acctNumExist(accNum)):
 				accNumInput = False
 				while (accNameInput):
 					accName = raw_input('Enter the account name: ')
-					print accName + "\n"
+					print str(accName) + "\n"
 					#CHECK TO SEE IF INPUT ACCOUNT NAME MATCHES ACCOUNT NUMBER
 					if (1 == 0):
 						print "Please enter the proper account name for this account."
@@ -436,13 +417,21 @@ def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
 			return fileLine
 
 def readAcctFile():
-	#read file, figure out file's name
-	#read line from file
-	#strip line
-	#add to the accounts list
-	#keep going until '000000' is hit
-	#return list
-	return 1
+	list = []
+	f = open('./validaccts.txt')
+	#f = open('../validaccts.txt') #this one is for a3 testing
+	list = f.readlines()
+	for x in range(len(list)):
+		list[x] = list[x].strip()
+		#list[x] = int(list[x])
+	f.close()
+	return list
+
+def acctNumExist(num):
+	for x in accounts:
+		if (x == num):
+			return True
+	return False		
 
 def openBankingSystem():
 	loggedIn = True
@@ -479,8 +468,6 @@ def openBankingSystem():
 	return openBankingSystem()			
 
 ######	 MAIN PROGRAM 	  ######
-#open current accounts file
+accounts = readAcctFile()
 openBankingSystem()
-#close current accounts file
-
 

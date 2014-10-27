@@ -8,3 +8,5 @@ failure log
 run until passes all tests
 
 front end read in accounts file and if’s for the test
+
+create and delete must be fixed
