@@ -1,10 +1,8 @@
 TO DO
 
+correct differences for expected outputs for a few tests
 
-failure log
+finish failure log
 
-get expected outputs for create and delete
-
-create and delete must be fixed — use for failure log
-for daily limit
+DONE
 
