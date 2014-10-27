@@ -1,0 +1,13 @@
+Type "login" to login: login
+
+agent or retail: agent
+
+Perform a transaction: create
+
+Enter your desired account number: 111111
+
+Please enter a valid account number.
+Enter your desired account number: 1111111
+
+Please enter a valid account number.
+Enter your desired account number: 

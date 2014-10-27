@@ -26,7 +26,7 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount (Cents) : '))
-					print amount+ "\n"
+					print str(amount) + "\n"
 					#amount = amount*100
 					if (amount > 100000):
 						print "Please enter a valid amount."
@@ -57,7 +57,7 @@ class retail(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Deposit Amount (Cents) : '))
-					print amount + "\n"
+					print str(amount) + "\n"
 					#amount = amount*100
 					if (amount > 100000):
 						print "Please enter a valid amount."
@@ -92,7 +92,7 @@ class retail(object):
 						amt = True
 						while (amt):
 							amount = int(input('Transfer Amount (Cents) : '))
-							print amount + "\n"
+							print str(amount) + "\n"
 							#amount = amount*100
 							if (amount > 100000):
 								print "Please enter a valid transfer amount."
@@ -133,7 +133,7 @@ class retail(object):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
 			transaction.lower()
-			print transaction + "\n"
+			print str(transaction) + "\n"
 			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
 				newTrans = self.withdraw()
@@ -170,7 +170,7 @@ class agent(object):
 				accNumInput = False
 				while (amt):
 					amount = int(input('Withdrawal Amount (Cents) : '))
-					print amount + "\n"
+					print str(amount) + "\n"
 					#amount = amount*100
 					if (amount > 999999):
 						print "Please enter a valid amount."
@@ -233,7 +233,7 @@ class agent(object):
 						amt = True
 						while (amt):
 							amount = int(raw_input('Transfer Amount (Cents) : '))
-							print amount + "\n"
+							print str(amount) + "\n"
 							#amount = amount*100
 							if (amount > 999999):
 								print "Please enter a valid transfer amount."
@@ -328,7 +328,7 @@ class agent(object):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
 			transaction.lower()
-			print transaction + "\n"
+			print str(transaction) + "\n"
 			#TESTS INPUT FOR WHICH TRANSACTION TYPE TO PERFORM
 			if (transaction == "withdraw"):
 				newTrans = self.withdraw()
@@ -418,8 +418,8 @@ def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
 
 def readAcctFile():
 	list = []
-	f = open('./validaccts.txt')
-	#f = open('../validaccts.txt') #this one is for a3 testing
+	#f = open('./validaccts.txt')
+	f = open('../validaccts.txt') #this one is for a3 testing
 	list = f.readlines()
 	for x in range(len(list)):
 		list[x] = list[x].strip()

@@ -1,10 +1,11 @@
 TO DO
 
-write all the input tests
 write all the expected outputs (must have 2 end lines at EOF
 
 failure log
 
 run until passes all tests
 
-create and delete must be fixed
+create and delete must be fixed — use for failure log
+for daily limit
+
