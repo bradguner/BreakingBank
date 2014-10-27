@@ -152,4 +152,32 @@ Please enter a valid transaction type.\
 Perform a transaction: logout\
 \
 Type "login" to login: stop\
-delete bad accnum}
+delete bad accnum\
+========\
+running test_create_transpostcreation.txt\
+Traceback (most recent call last):\
+  File "../breakingbank.py", line 474, in <module>\
+    openBankingSystem()\
+  File "../breakingbank.py", line 461, in openBankingSystem\
+    loggedIn = agentDay.runAgentDay()\
+  File "../breakingbank.py", line 336, in runAgentDay\
+    newTrans = self.withdraw()\
+  File "../breakingbank.py", line 165, in withdraw\
+    accNum = raw_input('Account Number: ')\
+EOFError: EOF when reading a line\
+comparing int to string in acc num check\
+=============\
+running test_delete_good.txt\
+Traceback (most recent call last):\
+  File "../breakingbank.py", line 475, in <module>\
+    openBankingSystem()\
+  File "../breakingbank.py", line 462, in openBankingSystem\
+    loggedIn = agentDay.runAgentDay()\
+  File "../breakingbank.py", line 348, in runAgentDay\
+    newTrans = self.delete()\
+  File "../breakingbank.py", line 289, in delete\
+    accNum = int(input('Enter the account number: '))\
+  File "<string>", line 1\
+    Test Name\
+python code if had opposite result\
+}

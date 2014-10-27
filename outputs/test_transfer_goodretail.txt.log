@@ -6,20 +6,11 @@ Perform a transaction: transfer
 
 To Account Number: 111111
 
-Please enter a valid account number.
-To Account Number: 222222
+From Account Number: 222222
 
-Please enter a valid account number.
-To Account Number: 10000
+Transfer Amount (Cents) : 10000
 
-Please enter a valid account number.
-To Account Number: logout
+Perform a transaction: logout
 
-Please enter a valid account number.
-To Account Number: stop
+Type "login" to login: stop
 
-Please enter a valid account number.
-To Account Number: 
-
-Please enter a valid account number.
-To Account Number: 

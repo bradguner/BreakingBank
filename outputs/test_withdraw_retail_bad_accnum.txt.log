@@ -9,17 +9,9 @@ Account Number: 111112
 Please enter a valid account number.
 Account Number: 111111
 
-Please enter a valid account number.
-Account Number: 10000
+Withdrawal Amount (Cents) : 10000
 
-Please enter a valid account number.
-Account Number: logout
+Perform a transaction: logout
 
-Please enter a valid account number.
-Account Number: stop
+Type "login" to login: stop
 
-Please enter a valid account number.
-Account Number: 
-
-Please enter a valid account number.
-Account Number: 

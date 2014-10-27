@@ -18,7 +18,7 @@ class retail(object):
 	def withdraw(self):
 		accNumInput = True
 		while (accNumInput):
-			accNum = raw_input('Account Number: ')
+			accNum = int(raw_input('Account Number: '))
 			print str(accNum) + "\n"
 			#CHECK TO SEE IF VALID ACCOUNT NUMBER
 			if (acctNumExist(accNum)): #if account num is valid
@@ -289,7 +289,7 @@ class agent(object):
 			accNum = int(input('Enter the account number: '))
 			print str(accNum) + "\n"
 			#CHECK TO SEE IF INPUT ACCOUNT NUMBER EXISTS
-			if (not acctNumExist(accNum)):
+			if (acctNumExist(accNum)):
 				accNumInput = False
 				while (accNameInput):
 					accName = raw_input('Enter the account name: ')
@@ -430,6 +430,7 @@ def readAcctFile():
 	return list
 
 def acctNumExist(num):
+	num = int(num)
 	for x in accounts:
 		if (x == num):
 			return True

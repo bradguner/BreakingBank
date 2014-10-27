@@ -2,12 +2,9 @@ Type "login" to login: login
 
 agent or retail: retail
 
-Perform a transaction: withdraw
+Perform a transaction: delete
 
-Account Number: 111111
-
-Withdrawal Amount (Cents) : 10000
-
+Please enter a valid transaction type.
 Perform a transaction: logout
 
 Type "login" to login: stop

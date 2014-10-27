@@ -2,11 +2,11 @@ Type "login" to login: login
 
 agent or retail: agent
 
-Perform a transaction: withdraw
+Perform a transaction: create
 
-Account Number: 111111
+Enter your desired account number: 123456
 
-Withdrawal Amount (Cents) : 10000
+Enter your desired account name: Test
 
 Perform a transaction: logout
 
