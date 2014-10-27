@@ -1,12 +1,10 @@
 TO DO
 
-validation == compare, expected log and sum folders with, outputs log and sum folders
-issue* time stamped transsummfile right now
-
 write all the input tests
 write all the expected outputs 
-
 
 failure log
 
 run until passes all tests
+
+front end read in accounts file and if’s for the test

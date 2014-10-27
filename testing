@@ -2,6 +2,7 @@
 cd inputs
 for i in *.txt
 do 
+	echo "running $i"
 	FILE="$i"
 	cat $FILE | while read line 
 	do
@@ -9,4 +10,11 @@ do
 	done | python ../breakingbank.py > ../outputs/$i.log
 	cp ./tempsummfile.txt ../outputs/$i.sum
 	rm ./tempsummfile.txt
+done
+
+for i in *.txt
+do
+	echo "checking outputs for $i"
+	diff ../outputs/$i.sum ../expected/$i.sum
+	diff ../outputs/$i.log ../expected/$i.log
 done
