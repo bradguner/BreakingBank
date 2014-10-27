@@ -1,9 +1,12 @@
 #!/bin/bash
-FILE="./inputs/test1.txt"
-cat $FILE
-cat $FILE | while read line 
-do
-	echo $line
-done | python breakingbank.py > ./outputs/log/test1.txt
-cp ./TransactionSummaryFiles/transsummfile.txt ./outputs/sum/test1.txt #this needs to be fixed
-
+cd inputs
+for i in *.txt
+do 
+	echo $i
+	FILE="$i"
+	cat $FILE | while read line 
+	do
+		echo $line
+	done | python ../breakingbank.py > ../outputs/$i.log
+	cp ../TransactionSummaryFiles/tempsummfile.txt ../outputs/$i.sum
+done

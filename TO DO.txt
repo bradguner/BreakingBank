@@ -6,12 +6,6 @@ issue* time stamped transsummfile right now
 write all the input tests
 write all the expected outputs 
 
-shell script
-*not reading in files right now
-*for all inputs/
-
-write all the input tests
-write all the expected outputs 
 
 failure log
 
