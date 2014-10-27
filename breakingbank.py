@@ -127,11 +127,8 @@ class retail(object):
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
 		"""
-		save_path = '../TransactionSummaryFiles/'
-		file = 'tempsummfile.txt'
-		filename = file.replace(":", "_")
-		completeName = os.path.join(save_path, filename) 
-		f = open(completeName,'w')
+		file1 = 'tempsummfile.txt'
+		f = open(file1,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
@@ -344,11 +341,8 @@ class agent(object):
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
 		"""
-		save_path = '../TransactionSummaryFiles/'
-		file = 'tempsummfile.txt'
-		filename = file.replace(":", "_")
-		completeName = os.path.join(save_path, filename) 
-		f = open(completeName,'w')
+		file1 = 'tempsummfile.txt'
+		f = open(file1,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')

@@ -2,11 +2,11 @@
 cd inputs
 for i in *.txt
 do 
-	echo $i
 	FILE="$i"
 	cat $FILE | while read line 
 	do
 		echo $line
 	done | python ../breakingbank.py > ../outputs/$i.log
-	cp ../TransactionSummaryFiles/tempsummfile.txt ../outputs/$i.sum
+	cp ./tempsummfile.txt ../outputs/$i.sum
+	rm ./tempsummfile.txt
 done
