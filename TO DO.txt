@@ -1,7 +1,7 @@
 TO DO
 
 write all the input tests
-write all the expected outputs 
+write all the expected outputs (must have 2 end lines at EOF
 
 failure log
 
