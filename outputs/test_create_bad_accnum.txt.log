@@ -9,11 +9,11 @@ Enter your desired account number: 111111
 Please enter a valid account number.
 Enter your desired account number: 1111111
 
-Enter your desired account name: 234567
+Please enter a valid account number.
+Enter your desired account number: 234567
 
-Perform a transaction: Test Name
+Enter your desired account name: Test Name
 
-Please enter a valid transaction type.
 Perform a transaction: logout
 
 Type "login" to login: stop

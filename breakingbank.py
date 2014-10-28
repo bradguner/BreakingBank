@@ -259,27 +259,31 @@ class agent(object):
 		while (accNumInput):
 			accNum = int(input('Enter your desired account number: '))
 			print str(accNum) + "\n"
-			#Account Number must be 6 digits. Maximum of 999999, so if < 1000000, account number is 6 digits long
-			#CHECK TO SEE IF INPUT ACCOUNT NUMBER DOES NOT EXIST
-			if (not acctNumExist(accNum)):
-				accNumInput = False
-				while (accNameInput): 
-					accName = raw_input('Enter your desired account name: ')
-					print str(accName) + "\n"
-					if (len(accName) > 15):
-						print "Please enter a valid account name."
-					elif (len(accName) == 0):
-						print "Please enter a valid account name."	
+			if ((len(str(accNum))) <= 6):
+				if (accNum <= 999999):
+					if (not acctNumExist(accNum)):
+						accNumInput = False
+						while (accNameInput): 
+							accName = raw_input('Enter your desired account name: ')
+							print str(accName) + "\n"
+							if (len(accName) > 15):
+								print "Please enter a valid account name."
+							elif (len(accName) == 0):
+								print "Please enter a valid account name."	
+							else:
+								#create account number here
+								accNameInput = False
+								#create string for write file
+								accNum = str(accNum)
+								accName = str(accName)
+								#transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
+								transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
 					else:
-						#create account number here
-						accNameInput = False
-						#create string for write file
-						accNum = str(accNum)
-						accName = str(accName)
-						#transactionInfo = '04_' + accNum + "_" + accName #proper formatting on end of string is needed
-						transactionInfo = formatFileLine('04', accNum, 'BBBBBB', 'MMMMMMMM', accName)
+						print "Please enter a valid account number."
+				else:
+						print "Please enter a valid account number."
 			else:
-				print "Please enter a valid account number."
+						print "Please enter a valid account number."					
 		return transactionInfo
 
 	def delete(self):

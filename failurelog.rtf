@@ -180,4 +180,45 @@ Traceback (most recent call last):\
   File "<string>", line 1\
     Test Name\
 python code if had opposite result\
-}
+======\
+checking outputs for test_create_transpostcreation.txt\
+2d1\
+< 02_111111_BBBBBB_00010000_NNNNNNNNNNNNNNN\
+18c18\
+test case sum file was wrong\
+=====\
+checking outputs for test_create_bad_accnum.txt\
+12c12,13\
+< Enter your desired account name: 234567\
+---\
+> Please enter a valid account number.\
+> Enter your desired account number: 234567\
+14c15\
+< Perform a transaction: Test Name\
+---\
+> Enter your desired account name: Test Name\
+16d16\
+< Please enter a valid transaction type.\
+input test case wrong\
+=========\
+checking outputs for test_create_bad_accnum.txt\
+12c12,13\
+< Enter your desired account name: 234567\
+---\
+> Please enter a valid account number.\
+> Enter your desired account number: 234567\
+14c15\
+< Perform a transaction: Test Name\
+---\
+> Enter your desired account name: Test Name\
+16d16\
+< Please enter a valid transaction type.\
+failing and accepting 1111111 as an account number\
+no constraint on python code for acc num\
+\
+====\
+checking outputs for test_create_bad_accnum.txt\
+1c1\
+< 04_234567_BBBBBB_MMMMMMMM_000000Test Name_\
+---\
+> 04_BBBBBB_MMMMMMMM_000000000234567_}
