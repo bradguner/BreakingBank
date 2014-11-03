@@ -25,6 +25,28 @@ def throwError():
 	return 0
 
 def main_program():
+	#open master accounts
+	masteraccts = []
+	f = open('./masteraccounts.txt')
+	masteraccts = f.readlines()
+	for x in range(len(masteraccts)):
+		masteraccts[x] = masteraccts[x].strip()
+	f.close()
+	#open merged transaction file
+	mergedtrans= []
+	f = open('./mergedtransactions.txt')
+	mergedtrans = f.readlines()
+	for x in range(len(mergedtrans)):
+		mergedtrans[x] = mergedtrans[x].strip()
+	f.close()
+	#for all tranasactions update the master accounts file
+	for i in mergedtrans:
+		transaction(i)
+	#writes output files
+	writeNewValidAccounts(masteraccts)
+	writeNewMasterAccounts(masteraccts)
+
+
 	return 0
 
 main_program()
