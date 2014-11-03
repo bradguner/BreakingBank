@@ -1,10 +1,3 @@
-"""
-CISC 327
-Breaking Bank
-Assignment #2
-Scott Wallace 10051890
-Brad Guner 10059112
-"""
 import datetime
 import time
 import os.path

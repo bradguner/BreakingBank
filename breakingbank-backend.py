@@ -15,7 +15,6 @@ def transaction(masterAccts,trans):
 		master[i] = master[i].split('_')
 
 	if (transCopy[0] == '01'):
-		#add amount from trans[3] to trans[1]
 		for acct in range(len(master)):
 			if (master[acct][0] == transCopy[1]):
 				acctBalance = int(master[acct][1])
@@ -23,7 +22,7 @@ def transaction(masterAccts,trans):
 				acctBalance += depAmount
 				master[acct][1] = str(master[acct][1])
 				master[acct][1] = str(acctBalance)
-				newStr = master[acct][0] + '_' + master[acct][1] + '_' + master[acct][2]
+				newStr = format(master[acct][0], master[acct][1], master[acct][2])
 				masterAccts[acct] = newStr
 				return masterAccts
 
@@ -42,6 +41,9 @@ def transaction(masterAccts,trans):
 	elif (transCopy[0] == '00'):
 		#end of session, skip
 		return 0
+
+def format(num, balance, name):
+	return string
 
 def writeNewMasterAccounts(list):
 	f = open('./masteraccounts.txt','w')
