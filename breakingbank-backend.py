@@ -10,12 +10,13 @@ constraint fails and the fatal error stop
 def transaction(masterAccts,trans):
 	#take trans, split by _ into list
 	transCopy = trans.split('_') #[CC, AAAAAA, BBBBBB, MMMMMMMM, NNNNNNNNNNNNNNN]
-	master = masterAccts
+	master = []
+	for i in range(len(masterAccts)):
+		master.append(masterAccts[i])
 	for i in range(len(master)):
 		master[i] = master[i].split('_')
-
 	if (transCopy[0] == '01'):
-		for acct in range(len(master)):
+		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
 				acctBalance = int(master[acct][1])
 				depAmount = int(transCopy[3])
@@ -43,7 +44,7 @@ def transaction(masterAccts,trans):
 		return 0
 
 def format(num, balance, name):
-	string = "temp"
+	string = "111111_1_NNNNNNNNNNNNNNN"
 	return string
 
 def writeNewMasterAccounts(list):
@@ -56,6 +57,7 @@ def writeNewMasterAccounts(list):
 def writeNewValidAccounts(list):
 	f = open('./validaccounts.txt','w')
 	for i in list:
+		#wrong doesnt write it correctly
 		f.write(i + "\n")
 	f.close()
 	return 0
