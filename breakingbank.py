@@ -352,6 +352,7 @@ class agent(object):
 				newTrans = self.delete()
 				f.write(newTrans + '\n')		
 			elif (transaction == "logout"):
+				f.write('00\n')
 				f.close()
 				running = False
 			else:
