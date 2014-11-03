@@ -43,6 +43,7 @@ def transaction(masterAccts,trans):
 		return 0
 
 def format(num, balance, name):
+	string = "temp"
 	return string
 
 def writeNewMasterAccounts(list):
