@@ -15,9 +15,17 @@ def transaction(trans):
 	return 0
 
 def writeNewMasterAccounts(list):
+	f = open('./masteraccounts.txt','w')
+	for i in list:
+		f.write(i + "\n")
+	f.close()
 	return 0
 
 def writeNewValidAccounts(list):
+	f = open('./validaccounts.txt','w')
+	for i in list:
+		f.write(i + "\n")
+	f.close()
 	return 0
 
 def throwError():
