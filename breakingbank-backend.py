@@ -11,8 +11,8 @@ nam egiven for delete myst have a mathcing name
 
 constraint fails and the fatal error stop
 """
-def transaction(trans):
-	return 0
+def transaction(list,trans):
+	return list
 
 def writeNewMasterAccounts(list):
 	f = open('./masteraccounts.txt','w')
@@ -47,9 +47,10 @@ def main_program():
 	for x in range(len(mergedtrans)):
 		mergedtrans[x] = mergedtrans[x].strip()
 	f.close()
-	#for all tranasactions update the master accounts file
+	mergedtrans = mergedtrans[:-1]
+	#for all transactions update the master accounts file
 	for i in mergedtrans:
-		transaction(i)
+		masteraccts = transaction(masteraccts,i)
 	#writes output files
 	writeNewValidAccounts(masteraccts)
 	writeNewMasterAccounts(masteraccts)
