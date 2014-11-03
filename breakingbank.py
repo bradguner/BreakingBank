@@ -424,7 +424,7 @@ def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
 
 def readAcctFile():
 	list = []
-	f = open('./validaccts.txt')
+	f = open('./validaccounts.txt')
 	list = f.readlines()
 	for x in range(len(list)):
 		list[x] = list[x].strip()
