@@ -15,6 +15,8 @@ def transaction(masterAccts,trans):
 		master.append(masterAccts[i])
 	for i in range(len(master)):
 		master[i] = master[i].split('_')
+		
+	#deposit
 	if (transCopy[0] == '01'):
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
