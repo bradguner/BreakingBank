@@ -10,7 +10,9 @@ constraint fails and the fatal error stop
 def transaction(masterAccts,trans):
 	#take trans, split by _ into list
 	transCopy = trans.split('_') #[CC, AAAAAA, BBBBBB, MMMMMMMM, NNNNNNNNNNNNNNN]
-	master = masterAccts.split('_')
+	master = masterAccts
+	for i in range(len(master)):
+		master[i] = master[i].split('_')
 
 	if (transCopy[0] == '01'):
 		#add amount from trans[3] to trans[1]
@@ -19,25 +21,27 @@ def transaction(masterAccts,trans):
 				acctBalance = int(master[acct][1])
 				depAmount = int(transCopy[3])
 				acctBalance += depAmount
-				acct[1] = str(acctBalance)
+				master[acct][1] = str(master[acct][1])
+				master[acct][1] = str(acctBalance)
 				newStr = master[acct][0] + '_' + master[acct][1] + '_' + master[acct][2]
 				masterAccts[acct] = newStr
 				return masterAccts
 
 	elif (transCopy[0] == '02'):
 		#subtract amount from trans[3] from trans[1]
+		return 0
 	elif (transCopy[0] == '03'):
 		#transfer
+		return 0
 	elif (transCopy[0] == '04'):
 		#create
+		return 0
 	elif (transCopy[0] == '05'):
 		#delete
+		return 0
 	elif (transCopy[0] == '00'):
 		#end of session, skip
-	
-	
-	#edit the list in each case
-	return list
+		return 0
 
 def writeNewMasterAccounts(list):
 	f = open('./masteraccounts.txt','w')
