@@ -1,8 +1,0 @@
-TO DO
-
-correct differences for expected outputs for a few tests
-
-finish failure log
-
-DONE
-
