@@ -1,8 +1,4 @@
 """
-reads in merged trans file
-ends in 00
-for each line perform said transaciton on master accounts
-
 constraints
 no negative balances
 deleted account has zero balance, dpes it disappear?
@@ -12,6 +8,11 @@ nam egiven for delete myst have a mathcing name
 constraint fails and the fatal error stop
 """
 def transaction(list,trans):
+	#take trans, split by _ into list
+	#cast list accordingly
+	#go through cases bases on the 1st element
+	#each case covers a transaction type
+	#edit the list in each case
 	return list
 
 def writeNewMasterAccounts(list):
@@ -54,8 +55,6 @@ def main_program():
 	#writes output files
 	writeNewValidAccounts(masteraccts)
 	writeNewMasterAccounts(masteraccts)
-
-
 	return 0
 
 main_program()
