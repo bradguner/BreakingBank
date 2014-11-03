@@ -7,11 +7,35 @@ nam egiven for delete myst have a mathcing name
 
 constraint fails and the fatal error stop
 """
-def transaction(list,trans):
+def transaction(masterAccts,trans):
 	#take trans, split by _ into list
-	#cast list accordingly
-	#go through cases bases on the 1st element
-	#each case covers a transaction type
+	transCopy = trans.split('_') #[CC, AAAAAA, BBBBBB, MMMMMMMM, NNNNNNNNNNNNNNN]
+	master = masterAccts.split('_')
+
+	if (transCopy[0] == '01'):
+		#add amount from trans[3] to trans[1]
+		for acct in range(len(master)):
+			if (master[acct][0] == transCopy[1]):
+				acctBalance = int(master[acct][1])
+				depAmount = int(transCopy[3])
+				acctBalance += depAmount
+				acct[1] = str(acctBalance)
+				newStr = master[acct][0] + '_' + master[acct][1] + '_' + master[acct][2]
+				masterAccts[acct] = newStr
+				return masterAccts
+
+	elif (transCopy[0] == '02'):
+		#subtract amount from trans[3] from trans[1]
+	elif (transCopy[0] == '03'):
+		#transfer
+	elif (transCopy[0] == '04'):
+		#create
+	elif (transCopy[0] == '05'):
+		#delete
+	elif (transCopy[0] == '00'):
+		#end of session, skip
+	
+	
 	#edit the list in each case
 	return list
 
@@ -48,7 +72,6 @@ def main_program():
 	for x in range(len(mergedtrans)):
 		mergedtrans[x] = mergedtrans[x].strip()
 	f.close()
-	mergedtrans = mergedtrans[:-1]
 	#for all transactions update the master accounts file
 	for i in mergedtrans:
 		masteraccts = transaction(masteraccts,i)
