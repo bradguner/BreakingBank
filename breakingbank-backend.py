@@ -16,8 +16,7 @@ def transaction(masterAccts,trans):
 	for i in range(len(master)):
 		master[i] = master[i].split('_')
 		
-	#deposit
-	if (transCopy[0] == '01'):
+	if (transCopy[0] == '01'):	#deposit
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
 				acctBalance = int(master[acct][1])
@@ -27,9 +26,9 @@ def transaction(masterAccts,trans):
 				master[acct][1] = str(acctBalance)
 				newStr = format(master[acct][0], master[acct][1], master[acct][2])
 				masterAccts[acct] = newStr
-				return masterAccts
+		return masterAccts
 
-	elif (transCopy[0] == '02'):	#same as deposit, just subtract from the account
+	elif (transCopy[0] == '02'):	#withdraw
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
 				acctBalance = int(master[acct][1])
@@ -39,9 +38,9 @@ def transaction(masterAccts,trans):
 				master[acct][1] = str(acctBalance)
 				newStr = format(master[acct][0], master[acct][1], master[acct][2])
 				masterAccts[acct] = newStr
-				return masterAccts
+		return masterAccts
 
-	elif (transCopy[0] == '03'):
+	elif (transCopy[0] == '03'):	#transfer
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
 				for anotherAcct in range(len(masterAccts)):
@@ -57,33 +56,37 @@ def transaction(masterAccts,trans):
 						masterAccts[acct] = newStr
 						newStr = format(master[anotherAcct][0], master[anotherAcct][1], master[anotherAcct][2])
 						masterAccts[anotherAcct] = newStr
-						return masterAccts
+		return masterAccts
 
-	elif (transCopy[0] == '04'):
-		#create neeeds check on account num, everything else should be working
+	elif (transCopy[0] == '04'):	#create neeeds check on account num, everything else should be working
 		temp = 0
 		acctNum = int(trans[1])
 		newStr = format(trans[1], trans[3], trans[4])
 		for acct in range(master):
-			first = int(master[acct][0])
-			if (acct + 1 <= range(master)):
-				second = int(master[acct + 1][0])
+			if (accct[0] != acctNum):
+				first = int(master[acct][0])
+				if (acct + 1 <= range(master)):
+					second = int(master[acct + 1][0])
+				else:
+					second = 'None'
+				if (accNum < first):
+					masterAccts.insert(acct - 1, newStr)
+				elif (accNum > first and accNum < second):
+					masterAccts.insert(acct, newStr)
+				elif (accNum > first and second == 'None'):
+					masterAccts.insert(acct, newStr)
 			else:
-				second = 'None'
-			if (accNum < first):
-				masterAccts.insert(acct - 1, newStr)
-			elif (accNum > first and accNum < second):
-				masterAccts.insert(acct, newStr)
-			elif (accNum > first and second == 'None'):
-				masterAccts.insert(acct, newStr)
+				throwError()
 		return masterAccts
-	elif (transCopy[0] == '05'):
-		#delete
 
-		return 0
+	elif (transCopy[0] == '05'):	#delete
+		acctNum = int(trans[1])
+		for acct in range(master):
+			if (acctNum == acct[0]):
+				masterAccts.remove(masterAccts[acct])
+		return masterAccts
 	elif (transCopy[0] == '00'):
-		#end of session, skip
-		return 0
+		return masterAccts
 
 def format(num, balance, name):
 	string = "111111_1_NNNNNNNNNNNNNNN"
