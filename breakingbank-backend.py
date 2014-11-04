@@ -1,13 +1,3 @@
-"""
-constraints
-no negative balances
-deleted account has zero balance, dpes it disappear?
-created account should not have existing acc num,, 2 create same number
-nam egiven for delete myst have a mathcing name
-
-constraint fails and the fatal error stop
-"""
-
 import sys
 
 def transaction(masterAccts,trans):
