@@ -7,6 +7,9 @@ nam egiven for delete myst have a mathcing name
 
 constraint fails and the fatal error stop
 """
+
+import sys
+
 def transaction(masterAccts,trans):
 	#take trans, split by _ into list
 	transCopy = trans.split('_') #[CC, AAAAAA, BBBBBB, MMMMMMMM, NNNNNNNNNNNNNNN]
@@ -58,7 +61,7 @@ def transaction(masterAccts,trans):
 						masterAccts[anotherAcct] = newStr
 		return masterAccts
 
-	elif (transCopy[0] == '04'):	#create neeeds check on account num, everything else should be working
+	elif (transCopy[0] == '04'):	#create
 		temp = 0
 		acctNum = int(trans[1])
 		newStr = format(trans[1], trans[3], trans[4])
@@ -81,10 +84,20 @@ def transaction(masterAccts,trans):
 
 	elif (transCopy[0] == '05'):	#delete
 		acctNum = int(trans[1])
+		transAcctName = trans[4]
 		for acct in range(master):
 			if (acctNum == acct[0]):
-				masterAccts.remove(masterAccts[acct])
+				acctBalance = acct[1]
+				if (acctBalance == 0):
+					acctName = acct[2]
+					if (transAcctName == acctName):
+						masterAccts.remove(masterAccts[acct])
+					else:
+						throwError()
+				else:
+					throwError()
 		return masterAccts
+
 	elif (transCopy[0] == '00'):
 		return masterAccts
 
@@ -108,8 +121,7 @@ def writeNewValidAccounts(list):
 	return 0
 
 def throwError():
-	print "Fatal Error"
-	return 0
+	sys.exit('Fatal Error')
 
 def main_program():
 	#open master accounts
