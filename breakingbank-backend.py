@@ -21,7 +21,7 @@ def transaction(masterAccts,trans):
 				masterAccts[acct] = newStr
 		return masterAccts
 
-	elif (transCopy[0] == '02'):	#withdraw
+	elif (transCopy[0] == '02'):	#withdraw _ must test this one
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
 				acctBalance = int(master[acct][1])
@@ -72,7 +72,7 @@ def transaction(masterAccts,trans):
 				throwError()
 		return masterAccts
 
-	elif (transCopy[0] == '05'):	#delete
+	elif (transCopy[0] == '05'):	#delete _ must test this one
 		acctNum = int(trans[1])
 		transAcctName = trans[4]
 		for acct in range(master):
