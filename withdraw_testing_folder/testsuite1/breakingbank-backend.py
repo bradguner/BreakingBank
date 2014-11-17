@@ -93,7 +93,7 @@ def transaction(masterAccts,trans):
 		return masterAccts
 
 def format(num, balance, name):
-	string = str(num) + "_" + str(balance) + "_" + str(name)
+	string = "111111_1_NNNNNNNNNNNNNNN"
 	return string
 
 def writeNewMasterAccounts(list):
