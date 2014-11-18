@@ -56,7 +56,7 @@ def transaction(masterAccts,trans):
 		temp = 0
 		acctNum = int(trans[1])
 		newStr = format(trans[1], trans[3], trans[4])
-		for acct in range(len(master):
+		for acct in range(len(master)):
 			if (accct[0] != acctNum):
 				first = int(master[acct][0])
 				if (acct + 1 <= range(master)):
@@ -76,7 +76,7 @@ def transaction(masterAccts,trans):
 	elif (transCopy[0] == '05'):	#delete _ do decision testing, need a test case it evaluate every if both ways
 		acctNum = int(trans[1])
 		transAcctName = trans[4]
-		for acct in range(len(master):
+		for acct in range(len(master)):
 			if (acctNum == acct[0]):
 				acctBalance = acct[1]
 				if (acctBalance == 0):
