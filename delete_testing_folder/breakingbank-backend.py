@@ -77,9 +77,9 @@ def transaction(masterAccts,trans):
 		acctNum = int(trans[1])
 		transAcctName = trans[4]
 		for acct in range(len(master)):
-			if (acctNum == acct[0]):
+			if (acctNum == int(acct[0])):
 				acctBalance = acct[1]
-				if (acctBalance == 0):
+				if (acctBalance == '0'):
 					acctName = acct[2]
 					if (transAcctName == acctName):
 						masterAccts.remove(masterAccts[acct])
