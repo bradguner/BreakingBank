@@ -8,7 +8,8 @@ def transaction(masterAccts,trans):
 		master.append(masterAccts[i])
 	for i in range(len(master)):
 		master[i] = master[i].split('_')
-		
+	
+	print transCopy[0]	
 	if (transCopy[0] == '01'):	#deposit
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
@@ -54,8 +55,8 @@ def transaction(masterAccts,trans):
 
 	elif (transCopy[0] == '04'):	#create
 		temp = 0
-		acctNum = int(trans[1])
-		newStr = format(trans[1], trans[3], trans[4])
+		acctNum = int(transCopy[1])
+		newStr = format(transCopy[1], transCopy[3], transCopy[4])
 		for acct in range(len(master)):
 			if (accct[0] != acctNum):
 				first = int(master[acct][0])
@@ -74,15 +75,23 @@ def transaction(masterAccts,trans):
 		return masterAccts
 
 	elif (transCopy[0] == '05'):	#delete _ do decision testing, need a test case it evaluate every if both ways
-		acctNum = int(trans[1])
-		transAcctName = trans[4]
+		print "DEL"
+		acctNum = str(transCopy[1])
+		print "acctNum ", acctNum
+		transAcctName = str(transCopy[4])
+		print "transAcctName", transAcctName
 		for acct in range(len(master)):
-			if (acctNum == int(acct[0])):
-				acctBalance = acct[1]
-				if (acctBalance == '0'):
-					acctName = acct[2]
+			print "master[acct][0]", master[acct][0] 
+			if (acctNum == master[acct][0]):
+				print "acctNum MATCH"
+				acctBalance = master[acct][1]
+				print "acctBalance", acctBalance
+				if (acctBalance == 0):
+					acctName = master[acct][2]
+					print "acctNAME", acctName
 					if (transAcctName == acctName):
-						masterAccts.remove(masterAccts[acct])
+						print "SAME NAME"
+						masterAccts = masterAccts.remove(masterAccts[acct])
 					else:
 						throwError()
 				else:
