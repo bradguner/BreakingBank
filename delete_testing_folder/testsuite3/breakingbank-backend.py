@@ -75,22 +75,14 @@ def transaction(masterAccts,trans):
 		return masterAccts
 
 	elif (transCopy[0] == '05'):	#delete _ do decision testing, need a test case it evaluate every if both ways
-		print "DEL"
 		acctNum = str(transCopy[1])
-		print "acctNum ", acctNum
 		transAcctName = str(transCopy[4])
-		print "transAcctName", transAcctName
-		for acct in range(len(master)):
-			print "master[acct][0]", master[acct][0] 
+		for acct in range(len(master)): 
 			if (acctNum == master[acct][0]):
-				print "acctNum MATCH"
 				acctBalance = master[acct][1]
-				print "acctBalance", acctBalance
 				if (acctBalance == '00000000'):
 					acctName = str(master[acct][2])
-					print "acctNAME", acctName
 					if (transAcctName == acctName):
-						print "SAME NAME"
 						masterAccts = masterAccts.remove(masterAccts[acct])
 					else:
 						throwError()
