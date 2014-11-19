@@ -99,17 +99,16 @@ def format(num, balance, name):
 
 def writeNewMasterAccounts(list):
 	f = open('./masteraccounts.txt','w')
-	for i in list:
-		f.write(i + "\n")
+	for i in list:							
+		f.write(i + "\n")					
 	f.close()
 	return 0
 
-def writeNewValidAccounts(list):
-	f = open('./validaccounts.txt','w')
-	for i in list:
-		#wrong doesnt write it correctly
-		f.write(i + "\n")
-	f.close()
+def writeNewValidAccounts(list):			#Need to write only account numbers
+	f = open('./validaccounts.txt','w')		#into valid accounts file
+	for i in list:							#make sure that '000000' ends file
+		f.write(i + "\n")					#should never be empty
+	f.close()								#will prevent error when empty
 	return 0
 
 def throwError():
