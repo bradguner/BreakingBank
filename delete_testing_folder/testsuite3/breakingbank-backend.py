@@ -86,8 +86,8 @@ def transaction(masterAccts,trans):
 				print "acctNum MATCH"
 				acctBalance = master[acct][1]
 				print "acctBalance", acctBalance
-				if (acctBalance == 0):
-					acctName = master[acct][2]
+				if (acctBalance == '00000000'):
+					acctName = str(master[acct][2])
 					print "acctNAME", acctName
 					if (transAcctName == acctName):
 						print "SAME NAME"
