@@ -1,0 +1,10 @@
+#!/bin/bash
+for i in *.txt
+do
+	echo "merging $i"
+	while read line
+	do
+	echo $line 
+	done < $i
+	#echo $line >> output.txt
+done
