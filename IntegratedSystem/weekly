@@ -3,3 +3,18 @@
 #day 1 create some accounts
 
 #different set of sssions each day ?
+
+#Start in IntegratedSystem/
+
+# === Day 1 ===
+
+# for every file in WeeklySessions/Day1
+# cp it into DailySessions
+./daily
+
+# delete all files inside Daily Sessions
+
+# === Day 2 ===
+# === Day 3 ===
+# === Day 4 ===
+# === Day 5 ===
