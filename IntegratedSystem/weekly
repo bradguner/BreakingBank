@@ -2,7 +2,7 @@
 
 # === Day 1 ===
 
-echo "Day 1"
+echo "=== Day 1 ==="
 cp WeeklySessions/Day1/. DailySessions
 ./daily
 cd DailySessions
@@ -11,7 +11,7 @@ cd ..
 
 # === Day 2 ===
 
-echo "Day 2"
+echo "=== Day 2 ==="
 cp WeeklySessions/Day2/. DailySessions
 ./daily
 cd DailySessions
@@ -20,7 +20,7 @@ cd ..
 
 # === Day 3 ===
 
-echo "Day 3"
+echo "=== Day 3 ==="
 cp WeeklySessions/Day3/. DailySessions
 ./daily
 cd DailySessions
@@ -29,7 +29,7 @@ cd ..
 
 # === Day 4 ===
 
-echo "Day 4"
+echo "=== Day 4 ==="
 cp WeeklySessions/Day4/. DailySessions
 ./daily
 cd DailySessions
@@ -38,7 +38,7 @@ cd ..
 
 # === Day 5 ===
 
-echo "Day 1"
+echo "=== Day 5 ==="
 cp WeeklySessions/Day5/. DailySessions
 ./daily
 cd DailySessions
