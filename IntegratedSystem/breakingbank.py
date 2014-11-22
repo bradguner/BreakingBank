@@ -110,18 +110,18 @@ class retail(object):
 	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runRetailDay(self):
 		running = True
-		"""
+		
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = './TransactionSummaryFiles/'
-		file = 'Transaction_Summary_File__' + st + '.txt'
-		filename = file.replace(":", "_")
+		save_path = './SummaryFiles/'
+		file1 = 'Trans_Summary_File__' + st + '.txt'
+		filename = file1.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
-		"""
-		file1 = 'tempsummfile.txt'
-		f = open(file1,'w')
+		
+		#file1 = 'tempsummfile.txt'
+		#f = open(file1,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
@@ -311,18 +311,18 @@ class agent(object):
 	#LOGOUT IS ACCEPTED AT THIS STAGE
 	def runAgentDay(self):
 		running = True
-		"""
+		
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = './TransactionSummaryFiles/'
-		file = 'Transaction_Summary_File__' + st + '.txt'
-		filename = file.replace(":", "_")
+		save_path = './SummaryFiles/'
+		file1 = 'Trans_Summary_File__' + st + '.txt'
+		filename = file1.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
 		f = open(completeName,'w')
-		"""
-		file1 = 'tempsummfile.txt'
-		f = open(file1,'w')
+		
+		#file1 = 'tempsummfile.txt'
+		#f = open(file1,'w')
 		while (running):
 			#STARTS ACCEPTING RETAIL TRANSACTIONS
 			transaction = raw_input('Perform a transaction: ')
