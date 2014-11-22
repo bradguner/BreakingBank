@@ -2,7 +2,6 @@
 
 # python writes trans summ file to ../SummaryFiles/ -- Time Stamped
 # read in local valid accounts
-# Concatenate the summary files
 
 cd Sessions
 
@@ -20,10 +19,12 @@ cd ..
 
 cd SummaryFiles 
 
+#!/bin/bash
 for i in *.txt
 do
 	echo "merging $i"
-	# ../mergedtransactions.txt
+	cat "$i" >> ../mergedtransactions.txt
+	printf "\n" >> ../mergedtransactions.txt
 done
 
 cd .. 
