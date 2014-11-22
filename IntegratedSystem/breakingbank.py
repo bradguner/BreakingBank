@@ -114,7 +114,7 @@ class retail(object):
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = './SummaryFiles/'
+		save_path = '../SummaryFiles/'
 		file1 = 'Trans_Summary_File__' + st + '.txt'
 		filename = file1.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
@@ -315,7 +315,7 @@ class agent(object):
 		#CREATES TRANSACTION SUMMARY FILE
 		ts = time.time()
 		st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-		save_path = './SummaryFiles/'
+		save_path = '../SummaryFiles/'
 		file1 = 'Trans_Summary_File__' + st + '.txt'
 		filename = file1.replace(":", "_")
 		completeName = os.path.join(save_path, filename) 
@@ -418,7 +418,7 @@ def formatFileLine(transCode, firstAcctNum, secondAcctNum, acctAmt, acctName):
 
 def readAcctFile():
 	list = []
-	f = open('./validaccounts.txt')
+	f = open('../validaccounts.txt')
 	list = f.readlines()
 	for x in range(len(list)):
 		list[x] = list[x].strip()
