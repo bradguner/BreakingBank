@@ -8,13 +8,45 @@
 
 # === Day 1 ===
 
-# for every file in WeeklySessions/Day1
-# cp it into DailySessions
+echo "Day 1"
+cp WeeklySessions/Day1/. DailySessions
 ./daily
-
-# delete all files inside Daily Sessions
+cd DailySessions
+rm *
+cd ..
 
 # === Day 2 ===
+
+echo "Day 2"
+cp WeeklySessions/Day2/. DailySessions
+./daily
+cd DailySessions
+rm *
+cd ..
+
 # === Day 3 ===
+
+echo "Day 3"
+cp WeeklySessions/Day3/. DailySessions
+./daily
+cd DailySessions
+rm *
+cd ..
+
 # === Day 4 ===
+
+echo "Day 4"
+cp WeeklySessions/Day4/. DailySessions
+./daily
+cd DailySessions
+rm *
+cd ..
+
 # === Day 5 ===
+
+echo "Day 1"
+cp WeeklySessions/Day5/. DailySessions
+./daily
+cd DailySessions
+rm *
+cd ..
