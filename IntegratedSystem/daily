@@ -30,5 +30,3 @@ done
 cd .. 
 
 python breakingbank-backend.py
-
-echo -n "" > mergedtransactions.txt # empties merged transactions at complete end of day
