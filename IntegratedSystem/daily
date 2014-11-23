@@ -19,13 +19,9 @@ cd ..
 
 cd SummaryFiles 
 
-#!/bin/bash
-for i in *.txt
-do
-	echo "merging $i"
-	cat "$i" >> ../mergedtransactions.txt
-	printf "\n" >> ../mergedtransactions.txt
-done
+echo "merging"
+cat *.txt >> ../mergedtransactions.txt
+echo "00" >> ../mergedtransactions.txt
 
 cd .. 
 

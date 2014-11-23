@@ -125,7 +125,7 @@ def main_program():
 
 	#open merged transaction file
 	mergedtrans= []
-	f = open('./mergedtransactions.txt')
+	f = open('./mergedtransactions.txt', 'r')
 	mergedtrans = f.readlines()
 	for x in range(len(mergedtrans)):
 		mergedtrans[x] = mergedtrans[x].strip()
