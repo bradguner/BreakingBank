@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# === Day 1 ===
+
+echo "=== Day 1 ==="
+cp WeeklySessions/Day1/. DailySessions
+./daily
