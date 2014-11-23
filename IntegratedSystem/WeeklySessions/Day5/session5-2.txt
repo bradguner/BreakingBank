@@ -1,14 +1,14 @@
 login
 agent
 transfer
-111111
 222222
+000001
 100
 deposit
-444444
+333333
 1000
 withdraw
-555555
+666666
 100
 logout
 stop
