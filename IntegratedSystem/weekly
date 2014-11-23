@@ -3,9 +3,13 @@
 # === Day 1 ===
 
 echo "=== Day 1 ==="
-cp WeeklySessions/Day1/. DailySessions
+cp WeeklySessions/Day1/* DailySessions
 ./daily
 cd DailySessions
+rm *
+cd ..
+cp SummaryFiles/* OldSummaryFiles
+cd SummaryFiles
 rm *
 cd ..
 cat mergedtransactions.txt > Day1Merged.txt
@@ -15,9 +19,13 @@ echo -n "" > mergedtransactions.txt
 # === Day 2 ===
 
 echo "=== Day 2 ==="
-cp WeeklySessions/Day2/. DailySessions
+cp WeeklySessions/Day2/* DailySessions
 ./daily
 cd DailySessions
+rm *
+cd ..
+cp SummaryFiles/* OldSummaryFiles
+cd SummaryFiles
 rm *
 cd ..
 cat mergedtransactions.txt > Day1Merged.txt
@@ -27,9 +35,13 @@ echo -n "" > mergedtransactions.txt
 # === Day 3 ===
 
 echo "=== Day 3 ==="
-cp WeeklySessions/Day3/. DailySessions
+cp WeeklySessions/Day3/* DailySessions
 ./daily
 cd DailySessions
+rm *
+cd ..
+cp SummaryFiles/* OldSummaryFiles
+cd SummaryFiles
 rm *
 cd ..
 cat mergedtransactions.txt > Day1Merged.txt
@@ -39,7 +51,7 @@ echo -n "" > mergedtransactions.txt
 # === Day 4 ===
 
 echo "=== Day 4 ==="
-cp WeeklySessions/Day4/. DailySessions
+cp WeeklySessions/Day4/* DailySessions
 ./daily
 cd DailySessions
 rm *
@@ -51,9 +63,13 @@ echo -n "" > mergedtransactions.txt
 # === Day 5 ===
 
 echo "=== Day 5 ==="
-cp WeeklySessions/Day5/. DailySessions
+cp WeeklySessions/Day5/* DailySessions
 ./daily
 cd DailySessions
+rm *
+cd ..
+cp SummaryFiles/* OldSummaryFiles
+cd SummaryFiles
 rm *
 cd ..
 cat mergedtransactions.txt > Day1Merged.txt

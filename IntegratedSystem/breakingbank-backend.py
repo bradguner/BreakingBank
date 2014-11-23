@@ -58,17 +58,17 @@ def transaction(masterAccts,trans):
 		acctNum = int(transCopy[1])
 		newStr = format(transCopy[1], transCopy[3], transCopy[4])
 		for acct in range(len(master)):
-			if (accct[0] != acctNum):
+			if (master[acct][0] != acctNum):
 				first = int(master[acct][0])
-				if (acct + 1 <= range(master)):
+				if (acct + 1 < len(master)):
 					second = int(master[acct + 1][0])
 				else:
 					second = 'None'
-				if (accNum < first):
+				if (acctNum < first):
 					masterAccts.insert(acct - 1, newStr)
-				elif (accNum > first and accNum < second):
+				elif (acctNum > first and acctNum < second):
 					masterAccts.insert(acct, newStr)
-				elif (accNum > first and second == 'None'):
+				elif (acctNum > first and second == 'None'):
 					masterAccts.insert(acct, newStr)
 			else:
 				throwError()

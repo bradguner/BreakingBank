@@ -1,7 +1,7 @@
 login
 agent
 create
-6666666
+666666
 Heisenberg
 create
 111111

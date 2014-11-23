@@ -1,0 +1,32 @@
+incorrect input for sessions
+
+if master accounts is empty we get an error in the backend
+missing 00
+
+session1-3 EOF File error, doesnt read stop/
+
+all errors after this pertain to the previous not working
+
+writes summary files incorrectly 
+new directory to store old in, script update
+
+syntax error in backend
+accct[0] -> acct[0]
+
+type error on same line ^ 61
+
+line 63 backend 
+error in if statement creates list instead of len, range was used
+
+line 64 index out of range
+
+0 1 2 3 4
+len() = 5
+acct = 4 + 1
+5 <= PASSES
+
+line 67-69
+accNUm is not defined, acctNum
+
+109 writes new masteraccts, empty?
+error in backend
