@@ -104,11 +104,11 @@ def writeNewMasterAccounts(list):
 	f.close()
 	return 0
 
-def writeNewValidAccounts(list):			#Need to write only account numbers
-	f = open('./validaccounts.txt','w')		#into valid accounts file
-	for i in list:							#make sure that '000000' ends file
-		f.write(i + "\n")					#should never be empty
-	f.close()								#will prevent error when empty
+def writeNewValidAccounts(list):			
+	f = open('./validaccounts.txt','w')		
+	for i in list:							
+		f.write(i + "\n")					
+	f.close()								
 	return 0
 
 def throwError():
@@ -122,6 +122,7 @@ def main_program():
 	for x in range(len(masteraccts)):
 		masteraccts[x] = masteraccts[x].strip()
 	f.close()
+
 	#open merged transaction file
 	mergedtrans= []
 	f = open('./mergedtransactions.txt')
@@ -129,12 +130,21 @@ def main_program():
 	for x in range(len(mergedtrans)):
 		mergedtrans[x] = mergedtrans[x].strip()
 	f.close()
+
+	print mergedtrans
 	#for all transactions update the master accounts file
 	for i in mergedtrans:
-		masteraccts = transaction(masteraccts,i)
+		if (i == "00"):
+			print masteraccts
+			writeNewValidAccounts(masteraccts)
+			writeNewMasterAccounts(masteraccts)
+		else:
+			masteraccts = transaction(masteraccts,i)
+
 	#writes output files
-	writeNewValidAccounts(masteraccts)
-	writeNewMasterAccounts(masteraccts)
+	#print masteraccts
+	#writeNewValidAccounts(masteraccts)
+	#writeNewMasterAccounts(masteraccts)
 	return 0
 
 main_program()

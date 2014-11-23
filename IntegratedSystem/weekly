@@ -74,4 +74,3 @@ rm *
 cd ..
 cat mergedtransactions.txt > Day1Merged.txt
 cat masteraccounts.txt > Day5Master.txt
-echo -n "" > mergedtransactions.txt
