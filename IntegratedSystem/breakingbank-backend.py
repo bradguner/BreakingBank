@@ -54,7 +54,7 @@ def transaction(masterAccts,trans):
 
 	elif (transCopy[0] == '04'):
 		acctNum = int(transCopy[1])
-		newStr = format(transCopy[1], transCopy[3], transCopy[4])
+		newStr = format(transCopy[1], "00000000", transCopy[4])
 		for acct in range(len(master)): 
 				if (master[acct][0] == acctNum):
 					throwError()
