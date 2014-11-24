@@ -8,8 +8,7 @@ def transaction(masterAccts,trans):
 		master.append(masterAccts[i])
 	for i in range(len(master)):
 		master[i] = master[i].split('_')
-	
-	print transCopy[0]	
+		
 	if (transCopy[0] == '01'):	#deposit
 		for acct in range(len(masterAccts)):
 			if (master[acct][0] == transCopy[1]):
@@ -60,10 +59,13 @@ def transaction(masterAccts,trans):
 				if (master[acct][0] == acctNum):
 					throwError()
 				else:
-					current = int(master[acct][0])
-					if (acctNum < current):
-						masterAccts.insert(acct, newStr)
-						return masterAccts
+					if (master[acct][0] == ''):
+						skip = 0
+					else:
+						current = int(master[acct][0]) 
+						if (acctNum < current):
+							masterAccts.insert(acct, newStr)
+							return masterAccts
 		masterAccts.append(newStr)
 		return masterAccts
 
@@ -125,20 +127,13 @@ def main_program():
 		mergedtrans[x] = mergedtrans[x].strip()
 	f.close()
 
-	print mergedtrans
 	#for all transactions update the master accounts file
 	for i in mergedtrans:
-		if (i == "00"):
-			print masteraccts
-			writeNewValidAccounts(masteraccts)
-			writeNewMasterAccounts(masteraccts)
-		else:
-			masteraccts = transaction(masteraccts,i)
+		masteraccts = transaction(masteraccts,i)
 
-	#writes output files
-	#print masteraccts
-	#writeNewValidAccounts(masteraccts)
-	#writeNewMasterAccounts(masteraccts)
+
+	writeNewValidAccounts(masteraccts)
+	writeNewMasterAccounts(masteraccts)
 	return 0
 
 main_program()
