@@ -13,9 +13,15 @@ do
 	do
 		echo $line
 	done | python ../breakingbank.py 
-	cat ../SummaryFiles/* >> ../mergedtransactions.txt
 done
 
 cd ..
 
-python breakingbank-backend.py
+cd SummaryFiles 
+
+echo "merging"
+cat *.txt >> ../mergedtransactions.txt
+
+cd .. 
+
+#python breakingbank-backend.py

@@ -3,6 +3,7 @@ list to fix
 DAILY - MERGE
 DAily - only producing one transaction summary file
 WEEKLY - Add for 5 days
+valid account does not output correctly
 
 merging errors
 inserting too many times in create
