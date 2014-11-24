@@ -99,11 +99,16 @@ def writeNewMasterAccounts(list):
 	f.close()
 	return 0
 
-def writeNewValidAccounts(list):	# needs to be split and only the account numbes		
-	f = open('./validaccounts.txt','w')		
-	for i in list:							
-		f.write(i + "\n")	
-	f.write("000000\n")					
+def writeNewValidAccounts(list):	
+	f = open('./validaccounts.txt','w')	
+	valid = []
+	for i in range(len(list)):
+		valid.append(list[i])	
+	for i in range(len(valid)):
+		valid[i] = valid[i].split('_')
+	for i in range(len(list)):							
+		f.write(valid[i][0] + "\n")	
+	f.write("000000")					
 	f.close()								
 	return 0
 
