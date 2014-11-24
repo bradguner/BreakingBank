@@ -53,25 +53,18 @@ def transaction(masterAccts,trans):
 						masterAccts[anotherAcct] = newStr
 		return masterAccts
 
-	elif (transCopy[0] == '04'):	#create
-		temp = 0
+	elif (transCopy[0] == '04'):
 		acctNum = int(transCopy[1])
 		newStr = format(transCopy[1], transCopy[3], transCopy[4])
-		for acct in range(len(master)):
-			if (master[acct][0] != acctNum):
-				first = int(master[acct][0])
-				if (acct + 1 < len(master)):
-					second = int(master[acct + 1][0])
+		for acct in range(len(master)): 
+				if (master[acct][0] == acctNum):
+					throwError()
 				else:
-					second = 'None'
-				if (acctNum < first):
-					masterAccts.insert(acct - 1, newStr)
-				elif (acctNum > first and acctNum < second):
-					masterAccts.insert(acct, newStr)
-				elif (acctNum > first and second == 'None'):
-					masterAccts.insert(acct, newStr)
-			else:
-				throwError()
+					current = int(master[acct][0])
+					if (acctNum < current):
+						masterAccts.insert(acct, newStr)
+						return masterAccts
+		masterAccts.append(newStr)
 		return masterAccts
 
 	elif (transCopy[0] == '05'):	#delete _ do decision testing, need a test case it evaluate every if both ways
@@ -104,10 +97,11 @@ def writeNewMasterAccounts(list):
 	f.close()
 	return 0
 
-def writeNewValidAccounts(list):			
+def writeNewValidAccounts(list):	# needs to be split and only the account numbes		
 	f = open('./validaccounts.txt','w')		
 	for i in list:							
-		f.write(i + "\n")					
+		f.write(i + "\n")	
+	f.write("000000\n")					
 	f.close()								
 	return 0
 
